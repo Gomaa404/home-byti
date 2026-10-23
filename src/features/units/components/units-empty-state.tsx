@@ -22,7 +22,7 @@ export function UnitsEmptyState({ onRefresh, onAddUnit }: UnitsEmptyStateProps) 
     if (onAddUnit) {
       onAddUnit();
     } else {
-      router.push("/dashboard/units/new/");
+      router.push("/units/new/");
     }
   };
 

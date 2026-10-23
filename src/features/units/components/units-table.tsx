@@ -237,7 +237,7 @@ export function UnitsTable() {
                     {/* 1. الوحدة */}
                     <td className="py-3 px-4 text-start">
                       <Link
-                        href={`/dashboard/units/${unit.id}/`}
+                        href={`/units/${unit.id}/`}
                         className="flex items-center gap-2.5 group/link hover:opacity-90 transition-opacity"
                       >
                         {renderUnitIcon(unit)}

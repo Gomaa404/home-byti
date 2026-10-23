@@ -23,7 +23,7 @@ function AutomationMainContent() {
 
   const handleTabChange = (tab: "rules" | "templates" | "logs") => {
     setActiveTab(tab);
-    router.push(`/dashboard/automation?tab=${tab}`, { scroll: false });
+    router.push(`/automation/?tab=${tab}`, { scroll: false });
   };
 
   return (

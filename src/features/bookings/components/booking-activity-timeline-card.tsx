@@ -95,7 +95,7 @@ export function BookingActivityTimelineCard({
       {/* Footer Link */}
       <div className="pt-2 flex justify-end">
         <Link
-          href={`/dashboard/bookings/${bookingCode}/activity/`}
+          href={`/bookings/${bookingCode}/activity/`}
           className="text-xs font-bold text-[#34432E] hover:text-[#172115] inline-flex items-center gap-1.5 transition-colors cursor-pointer select-none"
         >
           <span>عرض سجل النشاط الكامل</span>

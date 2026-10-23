@@ -1,11 +1,12 @@
 import type { NextConfig } from "next";
 
 const isDev = process.env.NODE_ENV === "development";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "/dashboard";
 
 const nextConfig: NextConfig = {
   output: isDev ? undefined : "export",
-  basePath: "/Edaret_Amlak",
-  assetPrefix: "/Edaret_Amlak",
+  basePath,
+  assetPrefix: basePath,
   trailingSlash: true,
   devIndicators: false,
   images: {
@@ -17,25 +18,25 @@ const nextConfig: NextConfig = {
           return [
             {
               source: "/logo.png",
-              destination: "/Edaret_Amlak/logo.png",
+              destination: `${basePath}/logo.png`,
               basePath: false,
               permanent: false,
             },
             {
               source: "/avatar.webp",
-              destination: "/Edaret_Amlak/avatar.webp",
+              destination: `${basePath}/avatar.webp`,
               basePath: false,
               permanent: false,
             },
             {
               source: "/properties/:path*",
-              destination: "/Edaret_Amlak/properties/:path*",
+              destination: `${basePath}/properties/:path*`,
               basePath: false,
               permanent: false,
             },
             {
               source: "/icon.png",
-              destination: "/Edaret_Amlak/icon.png",
+              destination: `${basePath}/icon.png`,
               basePath: false,
               permanent: false,
             },
@@ -47,19 +48,19 @@ const nextConfig: NextConfig = {
                   key: "realestate_auth",
                 },
               ],
-              destination: "/Edaret_Amlak/dashboard/",
+              destination: `${basePath}/`,
               basePath: false,
               permanent: false,
             },
             {
               source: "/",
-              destination: "/Edaret_Amlak/login/",
+              destination: `${basePath}/login/`,
               basePath: false,
               permanent: false,
             },
             {
               source: "/favicon.ico",
-              destination: "/Edaret_Amlak/favicon.ico",
+              destination: `${basePath}/favicon.ico`,
               basePath: false,
               permanent: false,
             },

@@ -211,7 +211,7 @@ export function Breadcrumb({
                 </span>
               ) : (
                 <Link
-                  href={crumb.href || "/dashboard"}
+                  href={crumb.href || "/"}
                   prefetch={true}
                   className="text-[#54624C] hover:text-[#181D17] hover:underline font-medium transition-colors"
                 >
@@ -236,7 +236,7 @@ export function Breadcrumb({
 function LinkCrumb({ crumb, isFirst }: { crumb: TrailItem; isFirst: boolean }) {
   return (
     <Link
-      href={crumb.href || "/dashboard"}
+      href={crumb.href || "/"}
       prefetch={true}
       className={cn(
         "inline-flex items-center gap-1.5 px-2 py-1 rounded-lg text-xs font-medium text-[#54624C] hover:text-[#181D17] hover:bg-[#F1F5EB] transition-colors outline-none focus-visible:ring-1 focus-visible:ring-[#34422E]/30 whitespace-nowrap cursor-pointer",
@@ -497,7 +497,7 @@ function BreadcrumbDotItem({
                   return (
                     <Link
                       key={`${c.href}-${i}`}
-                      href={c.href || "/dashboard"}
+                      href={c.href || "/"}
                       prefetch={true}
                       onClick={() => {
                         setIsOpen(false);
@@ -526,7 +526,7 @@ function BreadcrumbDotItem({
             {/* Actions */}
             <div className="pt-2.5 border-t border-[#EEF2E6] flex items-center justify-between gap-2">
               <Link
-                href={crumb.href || "/dashboard"}
+                href={crumb.href || "/"}
                 prefetch={true}
                 onClick={() => {
                   setIsOpen(false);
@@ -726,7 +726,7 @@ function BreadcrumbGroupDots({
               {items.map((item, idx) => (
                 <Link
                   key={`${item.href}-${idx}`}
-                  href={item.href || "/dashboard"}
+                  href={item.href || "/"}
                   prefetch={true}
                   onClick={() => {
                     setIsOpen(false);

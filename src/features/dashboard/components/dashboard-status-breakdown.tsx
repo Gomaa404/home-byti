@@ -81,7 +81,7 @@ export function DashboardStatusBreakdown() {
       <div className="mt-6 flex items-center justify-between text-xs text-[#7A8574]">
         <span>متوسط اعتماد الحساب: 24 ساعة</span>
         <Link
-          href="/dashboard/owners/?status=pending"
+          href="/owners/?status=pending"
           className="font-medium text-[#2E3A2B] hover:text-[#172115] hover:underline flex items-center gap-1.5 transition-colors"
           dir="ltr"
         >

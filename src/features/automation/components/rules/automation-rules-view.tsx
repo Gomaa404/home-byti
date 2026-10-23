@@ -78,7 +78,7 @@ export function AutomationRulesView({ onSelectRule, onTabChange }: AutomationRul
 
         <div className="flex items-center gap-2.5 flex-wrap">
           <Link
-            href="/dashboard/automation/rules/new/"
+            href="/automation/rules/new/"
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#4B5940] text-white hover:bg-[#3E4A35] transition-colors shadow-2xs"
           >
             <Plus className="w-4 h-4" />
@@ -124,7 +124,7 @@ export function AutomationRulesView({ onSelectRule, onTabChange }: AutomationRul
 
           <div className="flex items-center gap-3 pt-2">
             <Link
-              href="/dashboard/automation/rules/new/"
+              href="/automation/rules/new/"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#4B5940] text-white text-xs font-bold hover:bg-[#3E4A35] transition-colors shadow-2xs"
             >
               <Plus className="w-4 h-4" />
@@ -228,7 +228,7 @@ export function AutomationRulesView({ onSelectRule, onTabChange }: AutomationRul
                             </span>
                             <div>
                               <Link
-                                href={`/dashboard/automation/rules/${rule.id}/`}
+                                href={`/automation/rules/${rule.id}/`}
                                 className="font-bold text-sm text-[#1F2937] hover:text-[#1F3D2B] hover:underline block"
                               >
                                 {rule.title}
@@ -297,14 +297,14 @@ export function AutomationRulesView({ onSelectRule, onTabChange }: AutomationRul
                             >
                               <div className="space-y-0.5 pb-1">
                                 <Link
-                                  href={`/dashboard/automation/rules/${rule.id}/`}
+                                  href={`/automation/rules/${rule.id}/`}
                                   className="w-full px-3 py-2 rounded-xl flex items-center gap-2 hover:bg-gray-50 text-gray-700"
                                 >
                                   <Eye className="w-3.5 h-3.5 text-gray-400" />
                                   <span>تفاصيل القاعدة</span>
                                 </Link>
                                 <Link
-                                  href={`/dashboard/automation/rules/${rule.id}/edit/`}
+                                  href={`/automation/rules/${rule.id}/edit/`}
                                   className="w-full px-3 py-2 rounded-xl flex items-center gap-2 hover:bg-gray-50 text-gray-700"
                                 >
                                   <Edit className="w-3.5 h-3.5 text-gray-400" />

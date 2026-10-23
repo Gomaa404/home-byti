@@ -133,7 +133,7 @@ export function BookingGuestCard({ guest, bookingCode }: BookingGuestCardProps) 
       <div className="grid grid-cols-2 gap-2.5 pt-1">
         {/* Customer Data */}
         <Link
-          href="/dashboard/guests/GUST-89324/"
+          href="/guests/GUST-89324/"
           className="bg-[#EFF3EA] hover:bg-[#E5ECE0] text-[#2E3C29] py-2.5 px-3 rounded-xl text-xs font-bold border border-[#D8E1D2] flex items-center justify-center gap-1.5 transition-colors cursor-pointer shadow-3xs active:scale-95"
         >
           <UserCheck className="w-4 h-4" />
@@ -142,7 +142,7 @@ export function BookingGuestCard({ guest, bookingCode }: BookingGuestCardProps) 
 
         {/* Chat History */}
         <Link
-          href={`/dashboard/bookings/${bookingCode || "BK-10482"}/whatsapp/`}
+          href={`/bookings/${bookingCode || "BK-10482"}/whatsapp/`}
           className="bg-[#EFF3EA] hover:bg-[#E5ECE0] text-[#2E3C29] py-2.5 px-3 rounded-xl text-xs font-bold border border-[#D8E1D2] flex items-center justify-center gap-1.5 transition-colors cursor-pointer shadow-3xs active:scale-95"
         >
           <MessageSquare className="w-4 h-4" />

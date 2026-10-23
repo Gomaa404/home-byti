@@ -201,7 +201,7 @@ export function AddPropertySuccessView({
             </button>
 
             <Link
-              href="/dashboard/properties/prop-1/"
+              href="/properties/prop-1/"
               className="bg-[#34432E] hover:bg-[#232F1F] text-white px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-2xs transition-colors cursor-pointer w-full sm:w-auto"
             >
               <Eye className="w-4 h-4" />
@@ -212,7 +212,7 @@ export function AddPropertySuccessView({
           {/* Left Link in RTL: العودة لقائمة العقارات */}
           <div>
             <Link
-              href="/dashboard/properties/"
+              href="/properties/"
               className="text-xs sm:text-sm text-[#172115] hover:text-[#2E3C29] font-bold flex items-center gap-2 transition-colors"
             >
               <ArrowLeft className="w-4 h-4 text-[#172115]" />
@@ -258,7 +258,7 @@ export function AddPropertySuccessView({
             {/* Bottom link aligned to the left */}
             <div className="pt-6 flex justify-end">
               <Link
-                href="/dashboard/properties/prop-1/"
+                href="/properties/prop-1/"
                 className="text-xs sm:text-sm font-bold text-[#2C3825] hover:text-[#172115] flex items-center gap-1.5 transition-colors cursor-pointer"
               >
                 <span>الانتقال لإضافة الوحدات</span>

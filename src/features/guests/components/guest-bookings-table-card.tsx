@@ -174,7 +174,7 @@ export function GuestBookingsTableCard({
                   {/* Col 8: Action Button */}
                   <td className="py-4 px-4 whitespace-nowrap text-center">
                     <Link
-                      href={`/dashboard/bookings/${b.bookingCode}/`}
+                      href={`/bookings/${b.bookingCode}/`}
                       className="bg-[#E5EAE0] hover:bg-[#D8DDD3] drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] text-[#181D17] text-[12px] font-semibold h-[36px] px-3 rounded-[8px] inline-flex items-center gap-1.5 transition-all select-none active:scale-98"
                     >
                       <Eye className="w-3.5 h-3.5 text-[#181D17]" />

@@ -180,7 +180,7 @@ export function AddBookingForm({ onSuccess }: AddBookingFormProps) {
 
                 {/* Left side in RTL: View Owner Profile Button */}
                 <Link
-                  href="/dashboard/owners/1/"
+                  href="/owners/1/"
                   className="bg-white hover:bg-[#FAFBF9] border border-[#E2E6DC] text-xs font-bold text-[#172115] px-4 py-2 rounded-xl flex items-center gap-1.5 transition-colors shadow-2xs self-start sm:self-auto"
                 >
                   <span>عرض ملف المالك</span>
@@ -793,7 +793,7 @@ export function AddBookingForm({ onSuccess }: AddBookingFormProps) {
         actions={[
           {
             label: "إلغاء",
-            href: "/dashboard/bookings",
+            href: "/bookings/",
             variant: "secondary",
           },
           {

@@ -63,7 +63,7 @@ export function CreateRuleView() {
     if (!ok) return;
 
     toast.success("تم إنشاء وتفعيل قاعدة الأتمتة بنجاح!");
-    router.push("/dashboard/automation/");
+    router.push("/automation/");
   };
 
   return (
@@ -72,7 +72,7 @@ export function CreateRuleView() {
       <div className="bg-white rounded-3xl p-6 border border-[#EBEBEB] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <Link
-            href="/dashboard/automation/"
+            href="/automation/"
             className="w-8 h-8 rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 transition-colors"
           >
             <ArrowRight className="w-4 h-4" />
@@ -598,7 +598,7 @@ export function CreateRuleView() {
                 type="button"
                 onClick={() => {
                   toast.success("تم حفظ القاعدة كمسودة بنجاح");
-                  router.push("/dashboard/automation/");
+                  router.push("/automation/");
                 }}
                 className="w-full py-3 px-5 rounded-2xl border border-gray-200 text-gray-700 bg-white hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 text-sm font-medium"
               >
@@ -607,7 +607,7 @@ export function CreateRuleView() {
               </button>
 
               <Link
-                href="/dashboard/automation/"
+                href="/automation/"
                 className="block text-center text-xs text-[#9CA3AF] hover:text-[#1F2937] py-1"
               >
                 إلغاء والتراجع عن التغييرات

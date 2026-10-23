@@ -608,7 +608,7 @@ export function BookingActivityLogView({
             {/* Bottom Link (Figma Node 1:12257) */}
             <div className="pt-2">
               <Link
-                href="/dashboard/properties/1/activity/"
+                href="/properties/1/activity/"
                 className="text-[11px] font-bold text-[#34422A] hover:underline inline-flex items-center gap-1.5 transition-colors cursor-pointer select-none"
               >
                 <span>عرض سجل الأحداث الكامل للعقار</span>

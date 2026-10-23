@@ -17,7 +17,7 @@ export function useRegisterController() {
 
   useEffect(() => {
     if (isUserAuthenticated()) {
-      router.replace("/dashboard/");
+      router.replace("/");
     } else {
       setIsCheckingAuth(false);
     }
@@ -56,7 +56,7 @@ export function useRegisterController() {
           email: data.email,
         });
         setFeedback(res.data.message || "تم إنشاء الحساب بنجاح");
-        router.push("/dashboard/");
+        router.push("/");
       }
     } catch {
       setFeedback("حدث خطأ أثناء إنشاء الحساب");

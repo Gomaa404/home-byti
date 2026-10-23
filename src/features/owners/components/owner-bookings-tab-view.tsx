@@ -479,7 +479,7 @@ export function OwnerBookingsTabView({
                             icon: Eye,
                             onClick: () =>
                               router.push(
-                                `/dashboard/bookings/${booking.bookingCode || booking.id}`
+                                `/bookings/${booking.bookingCode || booking.id}/`
                               ),
                           },
                           {
@@ -487,7 +487,7 @@ export function OwnerBookingsTabView({
                             icon: CalendarCheck,
                             onClick: () =>
                               router.push(
-                                `/dashboard/bookings/${booking.bookingCode || booking.id}/edit`
+                                `/bookings/${booking.bookingCode || booking.id}/edit/`
                               ),
                           },
                           {

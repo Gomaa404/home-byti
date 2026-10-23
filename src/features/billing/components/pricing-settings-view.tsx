@@ -406,7 +406,7 @@ export function PricingSettingsView() {
           </button>
 
           <Link
-            href="/dashboard/billing/"
+            href="/billing/"
             className="bg-[#f1f5eb] hover:bg-[#e4ebdc] text-[#181d17] px-6 h-[44px] rounded-[12px] font-['Cairo'] font-semibold text-[14px] flex items-center justify-center transition-colors"
           >
             إلغاء

@@ -58,7 +58,7 @@ export function SubscriptionDetailView({
       <div className="bg-white rounded-3xl p-6 border border-[#EBEBEB] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <Link
-            href="/dashboard/billing/"
+            href="/billing/"
             className="w-9 h-9 rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 transition-colors"
           >
             <ArrowRight className="w-4 h-4" />
@@ -111,7 +111,7 @@ export function SubscriptionDetailView({
           </button>
 
           <Link
-            href="/dashboard/billing/pricing/"
+            href="/billing/pricing/"
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-[#34422a] hover:bg-[#283320] text-white shadow-sm transition-colors"
           >
             <SlidersHorizontal className="w-3.5 h-3.5" />
@@ -184,7 +184,7 @@ export function SubscriptionDetailView({
           <div className="pt-2 flex items-center justify-between text-xs">
             <span className="text-gray-400">{data.owner.city}</span>
             <Link
-              href="/dashboard/owners/1/"
+              href="/owners/1/"
               className="inline-flex items-center gap-1 font-semibold text-[#4b5940] hover:underline"
             >
               <span>فتح ملف المالك الشامل</span>

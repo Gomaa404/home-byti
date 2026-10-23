@@ -159,17 +159,17 @@ export interface FallbackTrailItem {
 export function generateFallbackTrail(pathname: string): FallbackTrailItem[] {
   const clean = (pathname || "").replace(/^\/Edaret_Amlak/, "").replace(/\/+$/, "") || "/";
   if (clean === "/" || clean === "/dashboard") {
-    return [{ title: "الرئيسية", href: "/dashboard/" }];
+    return [{ title: "الرئيسية", href: "/" }];
   }
 
   const rawSegments = clean.split("/").filter(Boolean);
   const segments = rawSegments.filter((s) => s !== "dashboard");
 
   const trail: FallbackTrailItem[] = [
-    { title: "الرئيسية", href: "/dashboard/" },
+    { title: "الرئيسية", href: "/" },
   ];
 
-  let accumulated = "/dashboard";
+  let accumulated = "";
   for (let i = 0; i < segments.length; i++) {
     const seg = segments[i];
     accumulated += `/${seg}`;

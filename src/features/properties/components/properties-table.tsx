@@ -125,7 +125,7 @@ export function PropertiesTable() {
                         </div>
                         <div>
                           <Link
-                            href={`/dashboard/properties/${property.id}/`}
+                            href={`/properties/${property.id}/`}
                             className="font-semibold text-[14px] leading-[20px] text-[#181D17] hover:text-[#4B5940] transition-colors block text-right"
                           >
                             {property.title}
@@ -226,7 +226,7 @@ export function PropertiesTable() {
                             {
                               label: "تفاصيل العقار",
                               icon: Eye,
-                              href: `/dashboard/properties/${property.id}`,
+                              href: `/properties/${property.id}/`,
                             },
                             {
                               label: "تعديل البيانات",
@@ -237,7 +237,7 @@ export function PropertiesTable() {
                             {
                               label: "إدارة الوحدات",
                               icon: Building2,
-                              href: `/dashboard/properties/${property.id}`,
+                              href: `/properties/${property.id}/`,
                             },
                             {
                               label: "أرشفة العقار",

@@ -21,7 +21,7 @@ export function NewBookingClientContent() {
 
   const handleReset = () => {
     setLocalSuccess(false);
-    router.push("/dashboard/bookings/new/");
+    router.push("/bookings/new/");
   };
 
   if (localSuccess) {

@@ -81,7 +81,7 @@ export function EditRuleView({ rule }: EditRuleViewProps) {
     setTimeout(() => {
       setIsSubmitting(false);
       toast.success("تم حفظ تعديلات قاعدة الأتمتة بنجاح وتحديث معايير الجدولة القادمة!");
-      router.push(`/dashboard/automation/rules/${ruleCode}`);
+      router.push(`/automation/rules/${ruleCode}/`);
     }, 700);
   };
 
@@ -91,7 +91,7 @@ export function EditRuleView({ rule }: EditRuleViewProps) {
       <div className="bg-white rounded-3xl p-6 border border-[#EBEBEB] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <Link
-            href={`/dashboard/automation/rules/${ruleCode}/`}
+            href={`/automation/rules/${ruleCode}/`}
             className="w-9 h-9 rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 transition-colors"
           >
             <ArrowRight className="w-4 h-4" />
@@ -114,7 +114,7 @@ export function EditRuleView({ rule }: EditRuleViewProps) {
         </div>
 
         <Link
-          href={`/dashboard/automation/rules/${ruleCode}/`}
+          href={`/automation/rules/${ruleCode}/`}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold border border-gray-200 text-[#454840] bg-[#FAFBF9] hover:bg-gray-50 transition-colors"
         >
           <History className="w-3.5 h-3.5 text-[#4b5940]" />
@@ -537,7 +537,7 @@ export function EditRuleView({ rule }: EditRuleViewProps) {
               </button>
 
               <Link
-                href={`/dashboard/automation/rules/${ruleCode}/`}
+                href={`/automation/rules/${ruleCode}/`}
                 className="w-full h-11 rounded-xl bg-[#ebefe6] hover:bg-[#dfe4db] text-[#181d17] text-sm font-semibold flex items-center justify-center gap-2 transition-colors"
               >
                 <RotateCcw className="w-4 h-4" />

@@ -50,7 +50,7 @@ export default function NotFound() {
           {/* Action Buttons */}
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
-              href="/login"
+              href="/login/"
               className="w-full sm:w-auto h-12 px-6 rounded-xl bg-[#344230] hover:bg-[#283424] text-white text-sm font-semibold flex items-center justify-center gap-2 transition-all shadow-sm active:scale-[0.99]"
             >
               <span>العودة إلى تسجيل الدخول</span>
@@ -58,7 +58,7 @@ export default function NotFound() {
             </Link>
 
             <Link
-              href="/register"
+              href="/register/"
               className="w-full sm:w-auto h-12 px-6 rounded-xl bg-white hover:bg-[#F4F6F0] border border-[#E0E4D8] text-[#273323] text-sm font-semibold flex items-center justify-center gap-2 transition-colors"
             >
               <span>إنشاء حساب جديد</span>

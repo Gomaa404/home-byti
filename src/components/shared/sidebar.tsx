@@ -32,16 +32,16 @@ import { showUnderConstructionToast } from "@/lib/toast";
 const isRouteAvailable = (href: string) => {
   const clean = href.replace(/\/+$/, "");
   return [
-    "/dashboard",
-    "/dashboard/owners",
-    "/dashboard/properties",
-    "/dashboard/units",
-    "/dashboard/bookings",
-    "/dashboard/operations",
-    "/dashboard/whatsapp",
-    "/dashboard/automation",
-    "/dashboard/billing",
-    "/dashboard/styleguide",
+    "",
+    "/owners",
+    "/properties",
+    "/units",
+    "/bookings",
+    "/operations",
+    "/whatsapp",
+    "/automation",
+    "/billing",
+    "/styleguide",
   ].includes(clean);
 };
 
@@ -53,22 +53,22 @@ interface NavItem {
 }
 
 const mainNavItems: NavItem[] = [
-  { title: "الرئيسية", href: "/dashboard/", icon: LayoutGrid },
-  { title: "أصحاب العقارات", href: "/dashboard/owners/", icon: Users2 },
-  { title: "العقارات", href: "/dashboard/properties/", icon: Building2 },
-  { title: "الوحدات", href: "/dashboard/units/", icon: Home },
-  { title: "الحجوزات", href: "/dashboard/bookings/", icon: CalendarDays },
-  { title: "العمليات", href: "/dashboard/operations/", icon: Wrench },
-  { title: "الأتمتة والرسائل", href: "/dashboard/automation/", icon: Zap },
-  { title: "الواتساب", href: "/dashboard/whatsapp/", icon: MessageSquare },
-  { title: "فريق العمل", href: "/dashboard/team/", icon: Users },
-  { title: "الاشتراكات والفوترة", href: "/dashboard/billing/", icon: Receipt },
-  { title: "التقارير", href: "/dashboard/reports/", icon: BarChart3 },
+  { title: "الرئيسية", href: "/", icon: LayoutGrid },
+  { title: "أصحاب العقارات", href: "/owners/", icon: Users2 },
+  { title: "العقارات", href: "/properties/", icon: Building2 },
+  { title: "الوحدات", href: "/units/", icon: Home },
+  { title: "الحجوزات", href: "/bookings/", icon: CalendarDays },
+  { title: "العمليات", href: "/operations/", icon: Wrench },
+  { title: "الأتمتة والرسائل", href: "/automation/", icon: Zap },
+  { title: "الواتساب", href: "/whatsapp/", icon: MessageSquare },
+  { title: "فريق العمل", href: "/team/", icon: Users },
+  { title: "الاشتراكات والفوترة", href: "/billing/", icon: Receipt },
+  { title: "التقارير", href: "/reports/", icon: BarChart3 },
 ];
 
 const systemNavItems: NavItem[] = [
-  { title: "الإعدادات", href: "/dashboard/settings/", icon: SlidersHorizontal },
-  { title: "الملف الشخصي", href: "/dashboard/profile/", icon: UserCircle2 },
+  { title: "الإعدادات", href: "/settings/", icon: SlidersHorizontal },
+  { title: "الملف الشخصي", href: "/profile/", icon: UserCircle2 },
 ];
 
 export function Sidebar() {
@@ -77,15 +77,13 @@ export function Sidebar() {
   const { sidebarOpen, setSidebarOpen } = useUIStore();
   const [currentUser, setCurrentUser] = useState<AuthUser | null>(null);
 
-  // Normalize pathname to strip basePath (/Edaret_Amlak) and any trailing slash
-  const cleanPathname = (pathname || "")
-    .replace(/^\/Edaret_Amlak/, "")
-    .replace(/\/+$/, "") || "/";
+  // Normalize pathname to strip any trailing slash
+  const cleanPathname = (pathname || "").replace(/\/+$/, "") || "/";
 
   const isItemActive = (href: string) => {
-    const cleanHref = href.replace(/^\/Edaret_Amlak/, "").replace(/\/+$/, "");
-    if (cleanHref === "/dashboard") {
-      return cleanPathname === "/dashboard" || cleanPathname === "/";
+    const cleanHref = href.replace(/\/+$/, "") || "/";
+    if (cleanHref === "/") {
+      return cleanPathname === "/";
     }
     return (
       cleanPathname === cleanHref ||
@@ -262,7 +260,7 @@ export function Sidebar() {
 
           {/* User Avatar with Green Online Dot */}
           <Link
-            href="/dashboard/profile/"
+            href="/profile/"
             className="relative block group"
             title="الملف الشخصي - محمد أحمد"
             aria-label="الملف الشخصي"

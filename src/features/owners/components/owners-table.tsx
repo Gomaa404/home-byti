@@ -173,7 +173,7 @@ export function OwnersTable() {
                           {
                             label: "عرض ملف المالك",
                             icon: Eye,
-                            href: `/dashboard/owners/${owner.id}`,
+                            href: `/owners/${owner.id}/`,
                           },
                           {
                             label: "تعديل بيانات المالك",
@@ -184,7 +184,7 @@ export function OwnersTable() {
                           {
                             label: "سجل العقارات والمحفظة",
                             icon: Building2,
-                            href: `/dashboard/owners/${owner.id}`,
+                            href: `/owners/${owner.id}/`,
                           },
                           {
                             label: "تعطيل حساب المالك",

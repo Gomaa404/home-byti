@@ -148,7 +148,7 @@ export function WhatsAppTemplatesView({ onTabChange }: WhatsAppTemplatesViewProp
             </button>
 
             <Link
-              href="/dashboard/automation/templates/new/"
+              href="/automation/templates/new/"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-[#4b5940] hover:bg-[#3d4934] text-white shadow-sm transition-colors"
             >
               <Plus className="w-4 h-4" />
@@ -231,7 +231,7 @@ export function WhatsAppTemplatesView({ onTabChange }: WhatsAppTemplatesViewProp
                 إعادة ضبط الفلاتر
               </button>
               <Link
-                href="/dashboard/automation/templates/new/"
+                href="/automation/templates/new/"
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-[#4b5940] text-white hover:bg-[#3d4934] transition-colors"
               >
                 <Plus className="w-3.5 h-3.5" />

@@ -82,7 +82,7 @@ export function OwnerPropertiesList({
         {properties.map((item) => (
           <Link
             key={item.id}
-            href={`/dashboard/properties/${item.id}/`}
+            href={`/properties/${item.id}/`}
             className="bg-[#F1F5EB] hover:bg-[#EAEFE3] rounded-2xl p-4 sm:p-4.5 border border-[#E0E5D9]/50 flex items-center justify-between gap-3 transition-colors group cursor-pointer block"
           >
             {/* Right in RTL: Image + Name + Details */}

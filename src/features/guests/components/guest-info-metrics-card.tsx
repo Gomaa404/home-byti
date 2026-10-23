@@ -74,7 +74,7 @@ export function GuestInfoMetricsCard({ guest }: GuestInfoMetricsCardProps) {
 
         {/* Left in RTL: Quick WhatsApp CTA (Figma node 1:11042) */}
         <Link
-          href={`/dashboard/bookings/${guest.bookings?.[0]?.bookingCode || "BK-10482"}/whatsapp/`}
+          href={`/bookings/${guest.bookings?.[0]?.bookingCode || "BK-10482"}/whatsapp/`}
           className="bg-[#F1F5EB] hover:bg-[#E5EBDD] text-[#34422A] h-[40px] px-4 rounded-[12px] text-[12px] font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer select-none active:scale-98 self-start sm:self-auto"
         >
           <MessageSquare className="w-4 h-4 text-[#34422A]" />

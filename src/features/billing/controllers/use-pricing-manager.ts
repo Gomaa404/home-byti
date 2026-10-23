@@ -54,7 +54,7 @@ export function usePricingManager() {
     toast.success("تم تحديث وجدولة تعرفة الأسعار الجديدة بنجاح", {
       description: `تاريخ السريان: ${effectiveDate} | السعر السنوي: ${annualPrice} ر.س`,
     });
-    router.push("/dashboard/billing/");
+    router.push("/billing/");
   };
 
   return {

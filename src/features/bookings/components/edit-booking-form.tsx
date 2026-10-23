@@ -91,7 +91,7 @@ export function EditBookingForm({ bookingId = "BK-10482" }: EditBookingFormProps
       toast.success("تم تحديث الحجز بنجاح", {
         description: "تمت مزامنة المواعيد مع القنوات الذكية وتحديث الرمز الرقمي",
       });
-      router.push(`/dashboard/bookings/${bookingId}`);
+      router.push(`/bookings/${bookingId}/`);
     }, 600);
   };
 
@@ -651,7 +651,7 @@ export function EditBookingForm({ bookingId = "BK-10482" }: EditBookingFormProps
 
             {/* Link to Owner Button */}
             <Link
-              href="/dashboard/owners/1/"
+              href="/owners/1/"
               className="w-full py-3 rounded-2xl bg-[#E4ECE0] hover:bg-[#D9E3D4] text-[#2D3927] font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-3xs active:scale-98"
             >
               <ArrowUpRight className="w-4 h-4 rtl:rotate-0" />

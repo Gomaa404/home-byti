@@ -52,10 +52,10 @@ export function NavigationTrailProvider({
       return customTrail;
     }
 
-    const baseTrail = generateFallbackTrail(pathname || "/dashboard/");
-    const cleanCurrent = (pathname || "/dashboard/")
+    const baseTrail = generateFallbackTrail(pathname || "/");
+    const cleanCurrent = (pathname || "/")
       .replace(/^\/Edaret_Amlak/, "")
-      .replace(/\/+$/, "") || "/dashboard";
+      .replace(/\/+$/, "") || "/";
 
     const override = titleOverrides[cleanCurrent];
     if (override && baseTrail.length > 0) {
@@ -74,9 +74,9 @@ export function NavigationTrailProvider({
 
   const updateCurrentTitle = useCallback(
     (title: string, badge?: string) => {
-      const cleanCurrent = (pathname || "/dashboard/")
+      const cleanCurrent = (pathname || "/")
         .replace(/^\/Edaret_Amlak/, "")
-        .replace(/\/+$/, "") || "/dashboard";
+        .replace(/\/+$/, "") || "/";
       setTitleOverrides((prev) => ({
         ...prev,
         [cleanCurrent]: { title, badge },

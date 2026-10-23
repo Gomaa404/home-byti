@@ -70,8 +70,8 @@ export function OperationsTable({ tasks, onSelectTask }: OperationsTableProps) {
               tasks.map((task) => {
                 const isCleaning = task.type === "cleaning";
                 const detailHref = isCleaning
-                  ? `/dashboard/operations/cleaning/${task.id}`
-                  : `/dashboard/operations/maintenance/${task.id}`;
+                  ? `/operations/cleaning/${task.id}/`
+                  : `/operations/maintenance/${task.id}/`;
 
                 return (
                   <tr

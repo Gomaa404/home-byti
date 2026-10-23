@@ -55,7 +55,7 @@ export function DashboardRecentProperties() {
           </div>
 
           <Link
-            href="/dashboard/properties/"
+            href="/properties/"
             className="font-medium text-[#2E3A2B] hover:text-[#172115] hover:underline flex items-center gap-1.5 text-xs sm:text-sm transition-colors"
             dir="ltr"
           >
@@ -69,7 +69,7 @@ export function DashboardRecentProperties() {
           {properties.map((prop) => (
             <Link
               key={prop.id}
-              href={`/dashboard/properties/${prop.id}/`}
+              href={`/properties/${prop.id}/`}
               className="py-2.5 px-3 flex items-center justify-between hover:bg-[#F9FAF7] rounded-2xl transition-colors group select-none"
             >
               <div className="flex items-center gap-3">
@@ -103,7 +103,7 @@ export function DashboardRecentProperties() {
       <div className="mt-6 flex items-center justify-between text-xs text-[#7A8574]">
         <span>إجمالي العقارات الموثقة: 386 عقار</span>
         <Link
-          href="/dashboard/properties/"
+          href="/properties/"
           className="font-medium text-[#2E3A2B] hover:text-[#172115] hover:underline flex items-center gap-1.5 transition-colors"
           dir="ltr"
         >

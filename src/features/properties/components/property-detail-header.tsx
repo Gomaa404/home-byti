@@ -10,7 +10,7 @@ interface PropertyDetailHeaderProps {
 export function PropertyDetailHeader({
   title = "تفاصيل العقار",
   subtitle = "إدارة ومتابعة بيانات العقار والمواصفات المعمارية والوحدات وسجل الحجوزات التشغيلية.",
-  fallbackHref = "/dashboard/properties",
+  fallbackHref = "/properties/",
 }: PropertyDetailHeaderProps) {
   return (
     <div

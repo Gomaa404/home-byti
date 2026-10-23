@@ -65,7 +65,7 @@ export function FullOperationsLogView({ unitId = "204" }: FullOperationsLogViewP
         <div>
           <div className="flex items-center gap-3">
             <Link
-              href="/dashboard/operations/"
+              href="/operations/"
               className="w-8 h-8 rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 transition-colors"
             >
               <ArrowRight className="w-4 h-4" />
@@ -86,7 +86,7 @@ export function FullOperationsLogView({ unitId = "204" }: FullOperationsLogViewP
         {/* Action Buttons */}
         <div className="flex items-center gap-2.5 flex-wrap">
           <Link
-            href="/dashboard/operations/maintenance/new/"
+            href="/operations/maintenance/new/"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium bg-[#1F3D2B] text-white hover:bg-[#183022] transition-colors shadow-sm"
           >
             <Plus className="w-4 h-4" />
@@ -414,7 +414,7 @@ export function FullOperationsLogView({ unitId = "204" }: FullOperationsLogViewP
                     تم تحويل تلقائي لحالة الوحدة إلى متاحة
                   </span>
                   <Link
-                    href="/dashboard/operations/cleaning/CL-10482/"
+                    href="/operations/cleaning/CL-10482/"
                     className="inline-flex items-center gap-1 text-[#1F3D2B] font-bold hover:underline"
                   >
                     <span>عرض مهمة التنظيف CL-10482</span>
@@ -549,7 +549,7 @@ export function FullOperationsLogView({ unitId = "204" }: FullOperationsLogViewP
                     تم تحويل الوحدة لمرحلة تحت التنظيف
                   </span>
                   <Link
-                    href="/dashboard/operations/maintenance/MT-2048/"
+                    href="/operations/maintenance/MT-2048/"
                     className="inline-flex items-center gap-1 text-[#1F3D2B] font-bold hover:underline"
                   >
                     <span>عرض بلاغ الصيانة MT-2048</span>

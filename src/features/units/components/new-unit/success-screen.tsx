@@ -190,7 +190,7 @@ export function UnitSuccessScreen({
         {/* Contextual Action Buttons (Figma Node 1:14552) */}
         <div className="relative flex items-center justify-center gap-2 flex-wrap pt-6">
           <Link
-            href="/dashboard/units/1/"
+            href="/units/1/"
             className="h-11 min-w-[170px] px-4 rounded-[12px] bg-[#34422A] hover:bg-[#2C3825] text-white text-[14px] font-semibold flex items-center justify-center gap-2 shadow-[0px_1px_1px_rgba(0,0,0,0.05)] transition-colors cursor-pointer"
           >
             <span>عرض تفاصيل الوحدة</span>

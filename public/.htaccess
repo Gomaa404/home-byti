@@ -81,7 +81,7 @@ DirectoryIndex index.html
 # ----------------------------------------------------------------------
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /Edaret_Amlak/
+  RewriteBase /dashboard/
 
   # If requested path is a real file or real directory, serve it directly
   RewriteCond %{REQUEST_FILENAME} -f [OR]
@@ -99,20 +99,20 @@ DirectoryIndex index.html
   RewriteCond %{REQUEST_FILENAME}/index.html -f
   RewriteRule ^(.*)/$ $1/index.html [L]
 
-  # If route without slash has index.html, serve it directly
+  # If route without slash has index.html, redirect to slash version
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME}/index.html -f
-  RewriteRule ^(.*)$ $1/index.html [L]
+  RewriteRule ^(.*[^/])$ $1/ [R=301,L]
 
   # If route.html exists, serve it
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^(.*)$ $1.html [L]
 
   # ErrorDocument for 404
-  ErrorDocument 404 /Edaret_Amlak/404/index.html
+  ErrorDocument 404 /dashboard/404.html
 
-  # Unknown paths fallback to 404 page instead of home page
+  # Unknown paths fallback to 404.html instead of home page
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^ 404/index.html [L]
+  RewriteRule ^ 404.html [L]
 </IfModule>

@@ -70,7 +70,7 @@ export function RuleDetailView({ rule: initialRule }: RuleDetailViewProps) {
   const handleDeleteConfirm = () => {
     setShowDeleteModal(false);
     toast.success(`تم حذف قاعدة الأتمتة (${rule.ruleCode}) نهائياً.`);
-    router.push("/dashboard/automation/");
+    router.push("/automation/");
   };
 
   return (
@@ -79,7 +79,7 @@ export function RuleDetailView({ rule: initialRule }: RuleDetailViewProps) {
       <div className="bg-white rounded-3xl p-6 border border-[#EBEBEB] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <Link
-            href="/dashboard/automation/"
+            href="/automation/"
             className="w-9 h-9 rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 transition-colors"
           >
             <ArrowRight className="w-4 h-4" />
@@ -111,7 +111,7 @@ export function RuleDetailView({ rule: initialRule }: RuleDetailViewProps) {
         {/* Action Buttons */}
         <div className="flex items-center gap-2">
           <Link
-            href={`/dashboard/automation/rules/${rule.ruleCode}/edit/`}
+            href={`/automation/rules/${rule.ruleCode}/edit/`}
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-[#4b5940] hover:bg-[#3d4934] text-white shadow-sm transition-colors"
           >
             <Edit className="w-3.5 h-3.5" />
@@ -368,7 +368,7 @@ export function RuleDetailView({ rule: initialRule }: RuleDetailViewProps) {
                 <p className="text-xs text-gray-500 mt-0.5">آخر 5 عمليات تمت معالجتها عبر هذه القاعدة</p>
               </div>
               <Link
-                href="/dashboard/automation/?tab=logs"
+                href="/automation/?tab=logs"
                 className="text-xs font-semibold text-[#4b5940] hover:underline"
               >
                 عرض سجل العمليات الكامل
@@ -404,7 +404,7 @@ export function RuleDetailView({ rule: initialRule }: RuleDetailViewProps) {
                     <td className="py-3 font-mono text-gray-600">1.1 ثانية</td>
                     <td className="py-3 text-center">
                       <Link
-                        href="/dashboard/automation/logs/EX-104829/"
+                        href="/automation/logs/EX-104829/"
                         className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#4b5940] hover:underline"
                       >
                         <span>معاينة</span>
@@ -429,7 +429,7 @@ export function RuleDetailView({ rule: initialRule }: RuleDetailViewProps) {
                     <td className="py-3 font-mono text-gray-600">1.3 ثانية</td>
                     <td className="py-3 text-center">
                       <Link
-                        href="/dashboard/automation/logs/EX-104828/"
+                        href="/automation/logs/EX-104828/"
                         className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#4b5940] hover:underline"
                       >
                         <span>معاينة</span>
@@ -454,7 +454,7 @@ export function RuleDetailView({ rule: initialRule }: RuleDetailViewProps) {
                     <td className="py-3 font-mono text-gray-600">0.9 ثانية</td>
                     <td className="py-3 text-center">
                       <Link
-                        href="/dashboard/automation/logs/EX-104825/"
+                        href="/automation/logs/EX-104825/"
                         className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#4b5940] hover:underline"
                       >
                         <span>معاينة</span>
