@@ -59,7 +59,7 @@ export function Topbar() {
           {/* 1. Circular Avatar Photo */}
           <div className="relative w-9 h-9 rounded-full overflow-hidden ring-1 ring-[#DCE2D7] shrink-0 shadow-2xs">
             <Image
-              src="/avatar.jpg"
+              src="/avatar.webp"
               alt="محمد أحمد"
               fill
               className="object-cover object-top"

@@ -72,7 +72,7 @@ export function AddPropertyForm({ onSuccess }: AddPropertyFormProps) {
       if (onSuccess) {
         onSuccess();
       } else {
-        router.push("/dashboard/properties/new?success=true");
+        router.push("/dashboard/properties/new/?success=true");
       }
     }, 500);
   };
@@ -202,7 +202,7 @@ export function AddPropertyForm({ onSuccess }: AddPropertyFormProps) {
 
               {/* Left in RTL: View Owner Profile Button */}
               <Link
-                href="/dashboard/owners/1"
+                href="/dashboard/owners/1/"
                 className="bg-white hover:bg-[#FAFBF9] border border-[#E2E6DC] text-[#2C3825] px-4 py-2.5 rounded-2xl text-xs font-bold flex items-center gap-2 shadow-xs transition-colors shrink-0 self-start sm:self-center"
               >
                 <span>ملف المالك</span>

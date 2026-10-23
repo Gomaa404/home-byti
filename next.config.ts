@@ -5,11 +5,11 @@ const isDev = process.env.NODE_ENV === "development";
 const nextConfig: NextConfig = {
   output: isDev ? undefined : "export",
   basePath: "/Edaret_Amlak",
+  assetPrefix: "/Edaret_Amlak",
   trailingSlash: true,
   devIndicators: false,
   images: {
-    loader: "custom",
-    loaderFile: "./src/lib/image-loader.ts",
+    unoptimized: true,
   },
   ...(isDev
     ? {

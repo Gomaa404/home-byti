@@ -650,7 +650,7 @@ export function EditBookingForm({ bookingId = "BK-10482" }: EditBookingFormProps
 
             {/* Link to Owner Button */}
             <Link
-              href="/dashboard/owners/1"
+              href="/dashboard/owners/1/"
               className="w-full py-3 rounded-2xl bg-[#E4ECE0] hover:bg-[#D9E3D4] text-[#2D3927] font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-3xs active:scale-98"
             >
               <ArrowUpRight className="w-4 h-4 rtl:rotate-0" />
@@ -712,7 +712,7 @@ export function EditBookingForm({ bookingId = "BK-10482" }: EditBookingFormProps
           <div className="bg-white rounded-3xl p-3.5 border border-[#E2E6DC] space-y-3 shadow-2xs">
             <div className="relative h-44 rounded-2xl overflow-hidden group">
               <Image
-                src="/properties/suite_204_interior.jpg"
+                src="/properties/suite_204_interior.webp"
                 alt="جناح تنفيذي فاخر — عمارة النخيل"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"

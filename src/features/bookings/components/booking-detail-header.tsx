@@ -59,7 +59,7 @@ export function BookingDetailHeader({
 
               {/* New Booking for Same Guest Button */}
               <Link
-                href="/dashboard/bookings/new"
+                href="/dashboard/bookings/new/"
                 className="bg-[#3D4C35] hover:bg-[#34422E] text-white px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 shadow-2xs transition-all cursor-pointer select-none active:scale-95"
               >
                 <UserPlus className="w-4 h-4 text-white" />
@@ -80,7 +80,7 @@ export function BookingDetailHeader({
 
               {/* Edit Booking Button */}
               <Link
-                href={`/dashboard/bookings/${bookingCode}/edit`}
+                href={`/dashboard/bookings/${bookingCode}/edit/`}
                 className="bg-white hover:bg-[#F9FAF7] border border-[#D5DDD0] text-[#172115] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-2 shadow-2xs transition-all cursor-pointer select-none active:scale-95"
               >
                 <Calendar className="w-4 h-4 text-[#172115]" />

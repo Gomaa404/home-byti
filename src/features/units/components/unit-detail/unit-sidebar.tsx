@@ -44,7 +44,7 @@ export function UnitSidebar({
             العقار المرتبط
           </span>
           <Link
-            href={`/dashboard/properties/${propertyId}`}
+            href={`/dashboard/properties/${propertyId}/`}
             className="text-[11.5px] font-bold text-[#34422A] hover:underline flex items-center gap-1"
           >
             <span>الملف</span>
@@ -90,7 +90,7 @@ export function UnitSidebar({
             مالك العقار
           </span>
           <Link
-            href={`/dashboard/owners/${ownerId}`}
+            href={`/dashboard/owners/${ownerId}/`}
             className="text-[11.5px] font-bold text-[#34422A] hover:underline flex items-center gap-1"
           >
             <span>الملف</span>

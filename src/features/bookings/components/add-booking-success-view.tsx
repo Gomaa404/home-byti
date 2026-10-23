@@ -261,7 +261,7 @@ export function AddBookingSuccessView({
       {/* 4. Action Buttons (Matching Figma: centered inline action buttons, no floating overlap) */}
       <div className="flex items-center justify-center gap-3 pt-6 pb-6 flex-wrap">
         <Link
-          href={`/dashboard/bookings/${bookingCode || "BK-10483"}`}
+          href={`/dashboard/bookings/${bookingCode || "BK-10483"}/`}
           className="h-11 min-w-[150px] px-6 rounded-[12px] bg-[#34422A] hover:bg-[#2C3825] text-white text-[14px] font-semibold flex items-center justify-center gap-2 shadow-[0px_1px_1px_rgba(0,0,0,0.05)] transition-colors cursor-pointer"
         >
           <span>عرض الحجز</span>
@@ -278,7 +278,7 @@ export function AddBookingSuccessView({
         </button>
 
         <Link
-          href="/dashboard/bookings"
+          href="/dashboard/bookings/"
           className="h-11 min-w-[140px] px-4 rounded-[12px] text-[#454840] hover:bg-[#F1F5EB] text-[14px] font-semibold flex items-center justify-center gap-2 transition-colors cursor-pointer"
         >
           <span>العودة إلى الحجوزات</span>

@@ -9,9 +9,10 @@ export const metadata = {
 };
 
 export function generateStaticParams() {
-  const numericIds = Array.from({ length: 100 }, (_, i) => ({ id: String(i + 1) }));
-  const ownerIds = Array.from({ length: 100 }, (_, i) => ({ id: `owner-${i + 1}` }));
-  return [...numericIds, ...ownerIds];
+  const numericIds = Array.from({ length: 10 }, (_, i) => ({ id: String(i + 1) }));
+  const ownerIds = Array.from({ length: 5 }, (_, i) => ({ id: `owner-${i + 1}` }));
+  const specialIds = [{ id: "PO-8821" }, { id: "8821" }];
+  return [...numericIds, ...ownerIds, ...specialIds];
 }
 
 interface PageProps {

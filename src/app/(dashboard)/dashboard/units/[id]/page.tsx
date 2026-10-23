@@ -7,9 +7,10 @@ export const metadata = {
 };
 
 export function generateStaticParams() {
-  const numericIds = Array.from({ length: 50 }, (_, i) => ({ id: String(i + 1) }));
-  const unitIds = Array.from({ length: 50 }, (_, i) => ({ id: `unit-${i + 1}` }));
-  return [...numericIds, ...unitIds];
+  const numericIds = Array.from({ length: 10 }, (_, i) => ({ id: String(i + 1) }));
+  const unitIds = Array.from({ length: 5 }, (_, i) => ({ id: `unit-${i + 1}` }));
+  const specialIds = [{ id: "204" }, { id: "U-204" }];
+  return [...numericIds, ...unitIds, ...specialIds];
 }
 
 interface PageProps {

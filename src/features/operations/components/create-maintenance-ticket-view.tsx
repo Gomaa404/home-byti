@@ -58,7 +58,7 @@ export function CreateMaintenanceTicketView() {
     if (!ok) return;
 
     toast.success("تم إنشاء بلاغ الصيانة MT-2048 وحظر الوحدة آلياً من الحجوزات بنجاح!");
-    router.push("/dashboard/operations/maintenance/MT-2048");
+    router.push("/dashboard/operations/maintenance/MT-2048/");
   };
 
   const removeFile = async (name: string) => {
@@ -80,7 +80,7 @@ export function CreateMaintenanceTicketView() {
       <div className="bg-white rounded-3xl p-6 border border-[#EBEBEB] shadow-sm">
         <div className="flex items-center gap-3">
           <Link
-            href="/dashboard/operations"
+            href="/dashboard/operations/"
             className="w-8 h-8 rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 transition-colors"
           >
             <ArrowRight className="w-4 h-4" />
@@ -534,7 +534,7 @@ export function CreateMaintenanceTicketView() {
               </button>
 
               <Link
-                href="/dashboard/operations"
+                href="/dashboard/operations/"
                 className="w-full py-3 px-5 rounded-2xl border border-gray-200 text-gray-700 bg-white hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 text-sm font-medium"
               >
                 <ArrowRight className="w-4 h-4" />

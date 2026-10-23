@@ -62,7 +62,7 @@ export function MaintenanceDetailView({ ticketId = "MT-2048" }: MaintenanceDetai
         <div>
           <div className="flex items-center gap-3">
             <Link
-              href="/dashboard/operations"
+              href="/dashboard/operations/"
               className="w-8 h-8 rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 transition-colors"
             >
               <ArrowRight className="w-4 h-4" />
@@ -87,7 +87,7 @@ export function MaintenanceDetailView({ ticketId = "MT-2048" }: MaintenanceDetai
         {/* Action Buttons */}
         <div className="flex items-center gap-2.5 flex-wrap">
           <Link
-            href="/dashboard/operations/maintenance/new"
+            href="/dashboard/operations/maintenance/new/"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium bg-[#1F3D2B] text-white hover:bg-[#183022] transition-colors shadow-sm"
           >
             <Plus className="w-4 h-4" />

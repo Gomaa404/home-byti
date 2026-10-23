@@ -298,7 +298,7 @@ export function PropertiesTable() {
                         </div>
                         <div>
                           <Link
-                            href={`/dashboard/properties/${property.id}`}
+                            href={`/dashboard/properties/${property.id}/`}
                             className="font-semibold text-[14px] leading-[20px] text-[#181D17] hover:text-[#4B5940] transition-colors block text-right"
                           >
                             {property.title}

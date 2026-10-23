@@ -126,7 +126,7 @@ export function BookingWhatsAppAutomationCard({
       {/* Footer Link */}
       <div className="pt-2 flex justify-end">
         <Link
-          href={`/dashboard/bookings/${bookingCode || "BK-10482"}/whatsapp`}
+          href={`/dashboard/bookings/${bookingCode || "BK-10482"}/whatsapp/`}
           className="text-xs font-bold text-[#34432E] hover:text-[#172115] inline-flex items-center gap-1.5 transition-colors cursor-pointer select-none"
         >
           <span>عرض سجل الرسائل الكامل وقوالب الأتمتة</span>

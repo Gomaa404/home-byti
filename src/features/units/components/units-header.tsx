@@ -13,7 +13,7 @@ export function UnitsHeader() {
   };
 
   const handleAddUnit = () => {
-    router.push("/dashboard/units/new");
+    router.push("/dashboard/units/new/");
   };
 
   return (
@@ -42,7 +42,7 @@ export function UnitsHeader() {
 
         {/* Add Unit Button */}
         <Link
-          href="/dashboard/units/new"
+          href="/dashboard/units/new/"
           prefetch={true}
           className="h-11 px-5 sm:px-6 bg-[#4B5940] hover:bg-[#3D4C35] text-white rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 shadow-2xs transition-colors cursor-pointer select-none"
         >

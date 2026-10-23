@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export function generateStaticParams() {
-  const numericIds = Array.from({ length: 20 }, (_, i) => ({ id: String(i + 1) }));
+  const numericIds = Array.from({ length: 5 }, (_, i) => ({ id: String(i + 1) }));
   const guestIds = [
     { id: "gust-89324" },
     { id: "GUST-89324" },

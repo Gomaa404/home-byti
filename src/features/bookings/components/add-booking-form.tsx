@@ -179,7 +179,7 @@ export function AddBookingForm({ onSuccess }: AddBookingFormProps) {
 
                 {/* Left side in RTL: View Owner Profile Button */}
                 <Link
-                  href="/dashboard/owners/1"
+                  href="/dashboard/owners/1/"
                   className="bg-white hover:bg-[#FAFBF9] border border-[#E2E6DC] text-xs font-bold text-[#172115] px-4 py-2 rounded-xl flex items-center gap-1.5 transition-colors shadow-2xs self-start sm:self-auto"
                 >
                   <span>عرض ملف المالك</span>
@@ -671,7 +671,7 @@ export function AddBookingForm({ onSuccess }: AddBookingFormProps) {
             {/* Top Half: Image Preview flush to card edges */}
             <div className="relative h-60 sm:h-64 w-full bg-[#EEF2E6]">
               <Image
-                src="/properties/suite_204_interior.jpg"
+                src="/properties/suite_204_interior.webp"
                 alt="جناح تنفيذي 204"
                 fill
                 className="object-cover"

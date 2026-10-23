@@ -54,7 +54,7 @@ export function BookingsEmptyStateView({
         {/* Left side: Add Booking Button */}
         <div className="shrink-0">
           <Link
-            href="/dashboard/bookings/new"
+            href="/dashboard/bookings/new/"
             onClick={onAddBooking}
             className="bg-[#384633] hover:bg-[#2E3C29] text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 shadow-xs transition-all cursor-pointer select-none active:scale-[0.98]"
           >
@@ -91,7 +91,7 @@ export function BookingsEmptyStateView({
         <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
           {/* Add Booking Button (Right in RTL) */}
           <Link
-            href="/dashboard/bookings/new"
+            href="/dashboard/bookings/new/"
             onClick={onAddBooking}
             className="bg-[#384633] hover:bg-[#2E3C29] text-white text-xs sm:text-sm font-bold rounded-xl px-5 py-2.5 flex items-center gap-2 shadow-xs transition-all cursor-pointer select-none active:scale-[0.98]"
           >

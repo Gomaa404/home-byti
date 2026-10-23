@@ -129,7 +129,7 @@ export function UnitActiveBookingCard({
 
         {/* Left Action: عرض تفاصيل الحجز */}
         <Link
-          href={`/dashboard/bookings?search=${bookingId}`}
+          href={`/dashboard/bookings/?search=${bookingId}`}
           onClick={() => toast.info(`استعراض تفاصيل الحجز: ${bookingId}`)}
           className="flex items-center gap-1.5 font-bold text-[#34422A] text-[12px] leading-[18px] hover:underline cursor-pointer select-none"
         >

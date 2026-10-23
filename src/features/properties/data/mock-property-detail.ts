@@ -18,7 +18,7 @@ export const defaultPropertyDetail: PropertyDetail = {
     description: "تزامن فوري عبر Zigbee Hub",
     badgeText: "مستقر وسليم",
   },
-  heroImage: "/properties/villa_nakheel.jpg",
+  heroImage: "/properties/villa_nakheel.webp",
   specs: {
     propertyType: "عمارة سكنية فاخرة",
     cityAndRegion: "الرياض • المنطقة الشمالية",
@@ -37,7 +37,7 @@ export const defaultPropertyDetail: PropertyDetail = {
     ],
   },
   locationInfo: {
-    mapImage: "/properties/riyadh_google_map.png",
+    mapImage: "/properties/riyadh_google_map.webp",
     pinText: "عمارة النخيل - طريق أنس بن مالك، الرياض",
     nationalAddress: "طريق أنس بن مالك، حي الياسمين، الرياض 13326، المملكة العربية السعودية",
     gpsCoordinates: "24.8143° N, 46.6341° E",

@@ -31,6 +31,7 @@ import { showUnderConstructionToast } from "@/lib/toast";
 import { useNavigationTrail } from "@/hooks/use-navigation-trail";
 
 const isRouteAvailable = (href: string) => {
+  const clean = href.replace(/\/+$/, "");
   return [
     "/dashboard",
     "/dashboard/owners",
@@ -42,7 +43,7 @@ const isRouteAvailable = (href: string) => {
     "/dashboard/automation",
     "/dashboard/billing",
     "/dashboard/styleguide",
-  ].includes(href);
+  ].includes(clean);
 };
 
 interface NavItem {
@@ -53,22 +54,22 @@ interface NavItem {
 }
 
 const mainNavItems: NavItem[] = [
-  { title: "الرئيسية", href: "/dashboard", icon: LayoutGrid },
-  { title: "أصحاب العقارات", href: "/dashboard/owners", icon: Users2 },
-  { title: "العقارات", href: "/dashboard/properties", icon: Building2 },
-  { title: "الوحدات", href: "/dashboard/units", icon: Home },
-  { title: "الحجوزات", href: "/dashboard/bookings", icon: CalendarDays },
-  { title: "العمليات", href: "/dashboard/operations", icon: Wrench },
-  { title: "الأتمتة والرسائل", href: "/dashboard/automation", icon: Zap },
-  { title: "الواتساب", href: "/dashboard/whatsapp", icon: MessageSquare },
-  { title: "فريق العمل", href: "/dashboard/team", icon: Users },
-  { title: "الاشتراكات والفوترة", href: "/dashboard/billing", icon: Receipt },
-  { title: "التقارير", href: "/dashboard/reports", icon: BarChart3 },
+  { title: "الرئيسية", href: "/dashboard/", icon: LayoutGrid },
+  { title: "أصحاب العقارات", href: "/dashboard/owners/", icon: Users2 },
+  { title: "العقارات", href: "/dashboard/properties/", icon: Building2 },
+  { title: "الوحدات", href: "/dashboard/units/", icon: Home },
+  { title: "الحجوزات", href: "/dashboard/bookings/", icon: CalendarDays },
+  { title: "العمليات", href: "/dashboard/operations/", icon: Wrench },
+  { title: "الأتمتة والرسائل", href: "/dashboard/automation/", icon: Zap },
+  { title: "الواتساب", href: "/dashboard/whatsapp/", icon: MessageSquare },
+  { title: "فريق العمل", href: "/dashboard/team/", icon: Users },
+  { title: "الاشتراكات والفوترة", href: "/dashboard/billing/", icon: Receipt },
+  { title: "التقارير", href: "/dashboard/reports/", icon: BarChart3 },
 ];
 
 const systemNavItems: NavItem[] = [
-  { title: "الإعدادات", href: "/dashboard/settings", icon: SlidersHorizontal },
-  { title: "الملف الشخصي", href: "/dashboard/profile", icon: UserCircle2 },
+  { title: "الإعدادات", href: "/dashboard/settings/", icon: SlidersHorizontal },
+  { title: "الملف الشخصي", href: "/dashboard/profile/", icon: UserCircle2 },
 ];
 
 export function Sidebar() {
@@ -280,7 +281,7 @@ export function Sidebar() {
 
           {/* User Avatar with Green Online Dot */}
           <Link
-            href="/dashboard/profile"
+            href="/dashboard/profile/"
             className="relative block group"
             title="الملف الشخصي - محمد أحمد"
             aria-label="الملف الشخصي"

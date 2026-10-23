@@ -20,7 +20,7 @@ const defaultProperties: PropertyItem[] = [
     unitsText: "24 وحدة مفروشة",
     occupancy: "91%",
     activeUnits: "22 / 24",
-    image: "/properties/nakheel.png",
+    image: "/properties/nakheel.webp",
   },
   {
     id: "prop-2",
@@ -29,7 +29,7 @@ const defaultProperties: PropertyItem[] = [
     unitsText: "24 وحدة مفروشة",
     occupancy: "83%",
     activeUnits: "10 / 12",
-    image: "/properties/oasis.png",
+    image: "/properties/oasis.webp",
   },
   {
     id: "prop-3",
@@ -38,7 +38,7 @@ const defaultProperties: PropertyItem[] = [
     unitsText: "6 وحدة مفروشة",
     occupancy: "75%",
     activeUnits: "5 / 6",
-    image: "/properties/aqeeq.png",
+    image: "/properties/aqeeq.webp",
   },
 ];
 
@@ -81,7 +81,7 @@ export function OwnerPropertiesList({
         {properties.map((item) => (
           <Link
             key={item.id}
-            href={`/dashboard/properties/${item.id}`}
+            href={`/dashboard/properties/${item.id}/`}
             className="bg-[#F1F5EB] hover:bg-[#EAEFE3] rounded-2xl p-4 sm:p-4.5 border border-[#E0E5D9]/50 flex items-center justify-between gap-3 transition-colors group cursor-pointer block"
           >
             {/* Right in RTL: Image + Name + Details */}

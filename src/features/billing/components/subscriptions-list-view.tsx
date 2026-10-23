@@ -89,7 +89,7 @@ export function SubscriptionsListView() {
 
         <div className="flex items-center gap-2.5 flex-wrap">
           <Link
-            href="/dashboard/billing/pricing"
+            href="/dashboard/billing/pricing/"
             className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold bg-[#FAFBF9] hover:bg-gray-100 text-[#181d17] border border-gray-200 transition-colors"
           >
             <SlidersHorizontal className="w-3.5 h-3.5 text-[#4b5940]" />
@@ -349,7 +349,7 @@ export function SubscriptionsListView() {
                   {/* Owner */}
                   <td className="py-4 pr-4">
                     <Link
-                      href={`/dashboard/billing/${sub.id}`}
+                      href={`/dashboard/billing/${sub.id}/`}
                       className="flex items-center gap-2.5"
                     >
                       <div className="w-9 h-9 rounded-full bg-[#ebefe6] text-[#34422a] font-bold text-xs flex items-center justify-center shrink-0">
@@ -463,7 +463,7 @@ export function SubscriptionsListView() {
                   {/* Actions */}
                   <td className="py-4 pl-4 text-center">
                     <Link
-                      href={`/dashboard/billing/${sub.id}`}
+                      href={`/dashboard/billing/${sub.id}/`}
                       className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-gray-100 hover:bg-[#ebefe6] text-[#454840] hover:text-[#34422a] text-[11px] font-semibold transition-colors"
                     >
                       <span>عرض</span>

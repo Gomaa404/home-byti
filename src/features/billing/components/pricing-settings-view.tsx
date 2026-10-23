@@ -55,7 +55,7 @@ export function PricingSettingsView() {
     toast.success("تم تحديث وجدولة تعرفة الأسعار الجديدة بنجاح", {
       description: `تاريخ السريان: ${effectiveDate} | السعر السنوي: ${annualPrice} ر.س`,
     });
-    router.push("/dashboard/billing");
+    router.push("/dashboard/billing/");
   };
 
   return (
@@ -463,7 +463,7 @@ export function PricingSettingsView() {
           </button>
 
           <Link
-            href="/dashboard/billing"
+            href="/dashboard/billing/"
             className="bg-[#f1f5eb] hover:bg-[#e4ebdc] text-[#181d17] px-6 h-[44px] rounded-[12px] font-['Cairo'] font-semibold text-[14px] flex items-center justify-center transition-colors"
           >
             إلغاء

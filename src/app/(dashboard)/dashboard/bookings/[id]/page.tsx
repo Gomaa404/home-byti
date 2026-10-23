@@ -9,19 +9,20 @@ export const metadata: Metadata = {
 };
 
 export function generateStaticParams() {
-  const numericIds = Array.from({ length: 100 }, (_, i) => ({ id: String(i + 1) }));
-  const bkIds = Array.from({ length: 50 }, (_, i) => ({ id: `bk-${i + 1}` }));
-  const capBkIds = Array.from({ length: 50 }, (_, i) => ({ id: `BK-${i + 1}` }));
-  const bookingCodes = Array.from({ length: 50 }, (_, i) => ({ id: `BK-${10480 + i}` }));
-  const rawCodes = Array.from({ length: 50 }, (_, i) => ({ id: String(10480 + i) }));
+  const numericIds = Array.from({ length: 10 }, (_, i) => ({ id: String(i + 1) }));
+  const bkIds = Array.from({ length: 5 }, (_, i) => ({ id: `bk-${i + 1}` }));
+  const capBkIds = Array.from({ length: 5 }, (_, i) => ({ id: `BK-${i + 1}` }));
+  const bookingCodes = Array.from({ length: 10 }, (_, i) => ({ id: `BK-${10480 + i}` }));
   const specialIds = [
     { id: "1048" },
     { id: "10482" },
+    { id: "10483" },
     { id: "bk-1048" },
     { id: "BK-1048" },
     { id: "BK-10482" },
+    { id: "BK-10483" },
   ];
-  return [...numericIds, ...bkIds, ...capBkIds, ...bookingCodes, ...rawCodes, ...specialIds];
+  return [...numericIds, ...bkIds, ...capBkIds, ...bookingCodes, ...specialIds];
 }
 
 interface PageProps {

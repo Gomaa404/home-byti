@@ -93,7 +93,7 @@ const defaultOwnerProperties: OwnerPropertyItem[] = [
     status: "reserved",
     lastUpdated: "16 سبتمبر 2026",
     relativeTime: "منذ ساعتين",
-    image: "/properties/nakheel.png",
+    image: "/properties/nakheel.webp",
   },
   {
     id: "prop-2",
@@ -105,7 +105,7 @@ const defaultOwnerProperties: OwnerPropertyItem[] = [
     status: "reserved",
     lastUpdated: "16 سبتمبر 2026",
     relativeTime: "منذ ساعتين",
-    image: "/properties/oasis.png",
+    image: "/properties/oasis.webp",
   },
   {
     id: "prop-3",
@@ -117,7 +117,7 @@ const defaultOwnerProperties: OwnerPropertyItem[] = [
     status: "available",
     lastUpdated: "16 سبتمبر 2026",
     relativeTime: "منذ ساعتين",
-    image: "/properties/aqeeq.png",
+    image: "/properties/aqeeq.webp",
   },
   {
     id: "prop-4",
@@ -129,7 +129,7 @@ const defaultOwnerProperties: OwnerPropertyItem[] = [
     status: "reserved",
     lastUpdated: "16 سبتمبر 2026",
     relativeTime: "منذ ساعتين",
-    image: "/properties/nakheel.png",
+    image: "/properties/nakheel.webp",
   },
 ];
 
@@ -252,7 +252,7 @@ export function OwnerPropertiesTabView({
       <div className="flex items-center justify-end gap-3">
         {/* Secondary Action: عرض جميع العقارات في المنصة */}
         <Link
-          href="/dashboard/properties"
+          href="/dashboard/properties/"
           className="bg-white hover:bg-[#F6F8F4] text-[#4A5745] border border-[#E2E6DC] font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl flex items-center gap-2 shadow-2xs transition-colors"
         >
           <Globe className="w-4 h-4 text-[#7D8A78]" />
@@ -261,7 +261,7 @@ export function OwnerPropertiesTabView({
 
         {/* Primary Action: إضافة عقار للمالك */}
         <Link
-          href="/dashboard/properties/new"
+          href="/dashboard/properties/new/"
           className="bg-[#2E3C29] hover:bg-[#232F1F] text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl flex items-center gap-2 shadow-2xs transition-colors cursor-pointer"
         >
           <Building2 className="w-4 h-4" />
@@ -458,7 +458,7 @@ export function OwnerPropertiesTabView({
                     <td className="px-5 py-4 whitespace-nowrap text-center">
                       <div className="flex items-center justify-center gap-2">
                         <Link
-                          href={`/dashboard/properties/${property.id}`}
+                          href={`/dashboard/properties/${property.id}/`}
                           className="bg-[#F2F5F0] hover:bg-[#EAEFE6] text-[#1E251B] rounded-xl px-3 py-1.5 text-center font-bold text-xs leading-tight transition-colors cursor-pointer inline-flex flex-col items-center justify-center select-none"
                         >
                           <span>عرض</span>

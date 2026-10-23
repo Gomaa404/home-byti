@@ -326,7 +326,7 @@ export function ExecutionLogsView({ onTabChange }: ExecutionLogsViewProps) {
                     <div className="flex items-center justify-center gap-1.5">
                       {/* View Details link */}
                       <Link
-                        href={`/dashboard/automation/logs/${log.id}`}
+                        href={`/dashboard/automation/logs/${log.id}/`}
                         className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-gray-100 hover:bg-[#ebefe6] text-[#454840] hover:text-[#34422a] text-[11px] font-semibold transition-colors"
                       >
                         <span>عرض التفاصيل</span>

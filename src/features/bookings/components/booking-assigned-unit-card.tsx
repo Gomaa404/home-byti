@@ -85,7 +85,7 @@ export function BookingAssignedUnitCard({
       {/* Action Links Row (Centered) */}
       <div className="pt-4 border-t border-[#EAEFE6] flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs font-bold text-[#34432E]">
         <Link
-          href={`/dashboard/properties/${assigned.propertyId}`}
+          href={`/dashboard/properties/${assigned.propertyId}/`}
           className="inline-flex items-center gap-1.5 hover:text-[#172115] hover:underline transition-colors"
         >
           <ExternalLink className="w-3.5 h-3.5" />
@@ -95,7 +95,7 @@ export function BookingAssignedUnitCard({
         <span className="text-[#C2CEC0] select-none">▪</span>
 
         <Link
-          href={`/dashboard/properties/${assigned.propertyId}`}
+          href={`/dashboard/properties/${assigned.propertyId}/`}
           className="inline-flex items-center gap-1.5 hover:text-[#172115] hover:underline transition-colors"
         >
           <ExternalLink className="w-3.5 h-3.5" />
@@ -105,7 +105,7 @@ export function BookingAssignedUnitCard({
         <span className="text-[#C2CEC0] select-none">▪</span>
 
         <Link
-          href={`/dashboard/owners/${assigned.ownerId}`}
+          href={`/dashboard/owners/${assigned.ownerId}/`}
           className="inline-flex items-center gap-1.5 hover:text-[#172115] hover:underline transition-colors"
         >
           <ExternalLink className="w-3.5 h-3.5" />

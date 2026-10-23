@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 };
 
 export function generateStaticParams() {
-  const numericIds = Array.from({ length: 100 }, (_, i) => ({ id: String(i + 1) }));
-  const propIds = Array.from({ length: 100 }, (_, i) => ({ id: `prop-${i + 1}` }));
+  const numericIds = Array.from({ length: 10 }, (_, i) => ({ id: String(i + 1) }));
+  const propIds = Array.from({ length: 5 }, (_, i) => ({ id: `prop-${i + 1}` }));
   const specialIds = [
     { id: "014" },
     { id: "prop-014" },

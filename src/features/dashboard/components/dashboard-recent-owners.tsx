@@ -82,7 +82,7 @@ export function DashboardRecentOwners() {
           </div>
 
           <Link
-            href="/dashboard/owners"
+            href="/dashboard/owners/"
             className="font-medium text-[#2E3A2B] hover:text-[#172115] hover:underline flex items-center gap-1.5 text-xs sm:text-sm transition-colors"
             dir="ltr"
           >

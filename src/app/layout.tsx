@@ -49,6 +49,12 @@ export default function RootLayout({
       dir="rtl"
       className={`${cairo.variable} ${inter.variable} h-full antialiased`}
     >
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/lucide-static@1.59.0/font/lucide.css"
+        />
+      </head>
       <body
         suppressHydrationWarning
         className="min-h-full flex flex-col font-sans bg-[#EFF2EB] text-[#252A24]"

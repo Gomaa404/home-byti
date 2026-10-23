@@ -27,7 +27,7 @@ export function LoginForm() {
 
   useEffect(() => {
     if (isUserAuthenticated()) {
-      router.replace("/dashboard");
+      router.replace("/dashboard/");
     } else {
       setIsCheckingAuth(false);
     }
@@ -57,7 +57,7 @@ export function LoginForm() {
       if (res?.data?.success) {
         setAuthSession({ identifier: data.identifier }, data.rememberMe);
         setFeedback(res.data.message || "تم تسجيل الدخول بنجاح");
-        router.push("/dashboard");
+        router.push("/dashboard/");
       }
     } catch {
       setFeedback("حدث خطأ أثناء تسجيل الدخول");

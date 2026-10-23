@@ -10,9 +10,9 @@ export function RootAuthRedirect() {
 
   useEffect(() => {
     if (isUserAuthenticated()) {
-      router.replace("/dashboard");
+      router.replace("/dashboard/");
     } else {
-      router.replace("/login");
+      router.replace("/login/");
     }
   }, [router]);
 

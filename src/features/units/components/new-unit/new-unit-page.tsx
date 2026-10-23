@@ -44,7 +44,7 @@ export function NewUnitPage() {
 
   const handleAddAnother = () => {
     setShowSuccess(false);
-    router.push("/dashboard/units/new");
+    router.push("/dashboard/units/new/");
   };
 
   if (showSuccess) {
@@ -52,7 +52,7 @@ export function NewUnitPage() {
       <div className="-m-4 sm:-m-6 lg:-m-8 bg-[#F1F5EB] min-h-screen">
         <UnitSuccessScreen
           onAddAnother={handleAddAnother}
-          onBackToList={() => router.push("/dashboard/units")}
+          onBackToList={() => router.push("/dashboard/units/")}
           property={selectedProperty.name}
           owner={selectedOwner.name}
         />
@@ -104,7 +104,7 @@ export function NewUnitPage() {
       {/* Sticky footer */}
       <FormFooterBar
         onSaveDraft={handleSave}
-        onCancel={() => router.push("/dashboard/units")}
+        onCancel={() => router.push("/dashboard/units/")}
         onSave={handleSave}
       />
 

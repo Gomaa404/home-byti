@@ -626,7 +626,7 @@ export function PropertyActivityLogView({
               {/* Drawer Action CTA */}
               <div className="pt-1">
                 <Link
-                  href={`/dashboard/properties/${propertyId}`}
+                  href={`/dashboard/properties/${propertyId}/`}
                   className="bg-[#34422a] hover:bg-[#283320] drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] rounded-[12px] px-[12px] py-[8px] flex items-center justify-center gap-[6px] w-full text-white cursor-pointer transition-colors active:scale-[0.99]"
                 >
                   <ExternalLink className="size-[12px] text-white" />

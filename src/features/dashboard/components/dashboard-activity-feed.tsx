@@ -117,7 +117,7 @@ export function DashboardActivityFeed() {
         </div>
 
         <Link
-          href="/dashboard/operations"
+          href="/dashboard/operations/"
           className="font-medium text-[#2E3A2B] hover:text-[#172115] hover:underline flex items-center gap-1.5 text-xs transition-colors"
           dir="ltr"
         >

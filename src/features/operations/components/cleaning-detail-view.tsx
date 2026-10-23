@@ -61,7 +61,7 @@ export function CleaningDetailView({ taskId = "CL-10482" }: CleaningDetailViewPr
         <div>
           <div className="flex items-center gap-3">
             <Link
-              href="/dashboard/operations"
+              href="/dashboard/operations/"
               className="w-8 h-8 rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 transition-colors"
             >
               <ArrowRight className="w-4 h-4" />

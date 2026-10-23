@@ -28,7 +28,7 @@ export function RegisterForm() {
 
   useEffect(() => {
     if (isUserAuthenticated()) {
-      router.replace("/dashboard");
+      router.replace("/dashboard/");
     } else {
       setIsCheckingAuth(false);
     }
@@ -69,7 +69,7 @@ export function RegisterForm() {
           email: data.email,
         });
         setFeedback(res.data.message || "تم إنشاء الحساب بنجاح");
-        router.push("/dashboard");
+        router.push("/dashboard/");
       }
     } catch {
       setFeedback("حدث خطأ أثناء إنشاء الحساب");

@@ -162,7 +162,7 @@ export function UnitDetailHeader({
 
           {/* تعديل الوحدة Button */}
           <Link
-            href="/dashboard/units/new"
+            href="/dashboard/units/new/"
             className="h-10 px-4 rounded-[10px] bg-[#34422A] text-white text-[12.5px] font-bold flex items-center gap-2 hover:bg-[#283420] transition-colors cursor-pointer select-none"
           >
             <Edit className="w-3.5 h-3.5" />

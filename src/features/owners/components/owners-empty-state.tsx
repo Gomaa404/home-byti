@@ -15,7 +15,7 @@ export function OwnersEmptyState({ onRefresh, onAddOwner }: OwnersEmptyStateProp
     if (onRefresh) {
       onRefresh();
     } else {
-      router.push("/dashboard/owners");
+      router.push("/dashboard/owners/");
     }
   };
 

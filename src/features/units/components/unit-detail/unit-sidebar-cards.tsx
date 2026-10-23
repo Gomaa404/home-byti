@@ -92,7 +92,7 @@ export function UnitSidebarCards({
 
         {/* Action Button: عرض سجل العقار بالكامل */}
         <Link
-          href={`/dashboard/properties/${propertyId}`}
+          href={`/dashboard/properties/${propertyId}/`}
           className="bg-[#E5EAE0] hover:bg-[#D8E0D2] rounded-[12px] px-4 py-2.5 flex items-center justify-center gap-2 font-bold text-[#181D17] text-[12px] leading-[18px] w-full transition-colors cursor-pointer select-none"
         >
           <span>عرض سجل العقار بالكامل</span>
@@ -160,7 +160,7 @@ export function UnitSidebarCards({
 
         {/* Action Button: عرض ملف المالك المعتمد */}
         <Link
-          href={`/dashboard/owners/${ownerId}`}
+          href={`/dashboard/owners/${ownerId}/`}
           className="bg-[#E5EAE0] hover:bg-[#D8E0D2] rounded-[12px] px-4 py-2.5 flex items-center justify-center gap-2 font-bold text-[#181D17] text-[12px] leading-[18px] w-full transition-colors cursor-pointer select-none"
         >
           <span>عرض ملف المالك المعتمد</span>

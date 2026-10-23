@@ -39,7 +39,7 @@ export function GuestProfileHeader({ guestName = "خالد العتيبي" }: Gu
 
         {/* Back to Bookings Button */}
         <Link
-          href="/dashboard/bookings"
+          href="/dashboard/bookings/"
           className="bg-[#4B5940] hover:bg-[#3D4B33] text-white h-[44px] px-6 rounded-[12px] text-[14px] font-semibold flex items-center gap-2 drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] transition-all cursor-pointer select-none active:scale-98"
         >
           <span>العودة إلى الحجوزات</span>

@@ -14,7 +14,6 @@ import {
   UserCircle2,
   Sparkles,
   History,
-  FileText,
   LucideIcon,
 } from "lucide-react";
 
@@ -160,14 +159,14 @@ export interface FallbackTrailItem {
 export function generateFallbackTrail(pathname: string): FallbackTrailItem[] {
   const clean = (pathname || "").replace(/^\/Edaret_Amlak/, "").replace(/\/+$/, "") || "/";
   if (clean === "/" || clean === "/dashboard") {
-    return [{ title: "الرئيسية", href: "/dashboard" }];
+    return [{ title: "الرئيسية", href: "/dashboard/" }];
   }
 
   const rawSegments = clean.split("/").filter(Boolean);
   const segments = rawSegments.filter((s) => s !== "dashboard");
 
   const trail: FallbackTrailItem[] = [
-    { title: "الرئيسية", href: "/dashboard" },
+    { title: "الرئيسية", href: "/dashboard/" },
   ];
 
   let accumulated = "/dashboard";
@@ -177,7 +176,7 @@ export function generateFallbackTrail(pathname: string): FallbackTrailItem[] {
     const { title, badge } = resolveRouteTitle(accumulated);
     trail.push({
       title,
-      href: accumulated,
+      href: `${accumulated}/`,
       badge,
     });
   }

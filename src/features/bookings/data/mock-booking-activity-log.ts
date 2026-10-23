@@ -15,7 +15,7 @@ export const defaultBookingActivitySummary: BookingActivitySummary = {
     name: "عمارة النخيل الفندقية",
     address: "حي النخيل، طريق الإمام سعود، الرياض",
     unitSpec: "وحدة 204 • جناح تنفيذي",
-    image: "/properties/nakheel_hd.jpg",
+    image: "/properties/nakheel_hd.webp",
     status: "عقار نشط",
   },
 };

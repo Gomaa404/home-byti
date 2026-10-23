@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import "../../node_modules/shadcn/dist/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -178,3 +178,32 @@
     @apply font-sans;
   }
 }
+
+/* CDN Lucide Icon Font Styling Bridge */
+i.lucide-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'lucide' !important;
+  font-style: normal;
+  font-size: 1em;
+  line-height: 1;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+i.lucide-icon.w-3, i.lucide-icon.h-3, i.lucide-icon.size-3 { font-size: 0.75rem; }
+i.lucide-icon.w-3\.5, i.lucide-icon.h-3\.5, i.lucide-icon.size-3\.5 { font-size: 0.875rem; }
+i.lucide-icon.w-4, i.lucide-icon.h-4, i.lucide-icon.size-4 { font-size: 1rem; }
+i.lucide-icon.w-4\.5, i.lucide-icon.h-4\.5, i.lucide-icon.size-4\.5 { font-size: 1.125rem; }
+i.lucide-icon.w-5, i.lucide-icon.h-5, i.lucide-icon.size-5 { font-size: 1.25rem; }
+i.lucide-icon.w-6, i.lucide-icon.h-6, i.lucide-icon.size-6 { font-size: 1.5rem; }
+i.lucide-icon.w-7, i.lucide-icon.h-7, i.lucide-icon.size-7 { font-size: 1.75rem; }
+i.lucide-icon.w-8, i.lucide-icon.h-8, i.lucide-icon.size-8 { font-size: 2rem; }
+i.lucide-icon.w-9, i.lucide-icon.h-9, i.lucide-icon.size-9 { font-size: 2.25rem; }
+i.lucide-icon.w-10, i.lucide-icon.h-10, i.lucide-icon.size-10 { font-size: 2.5rem; }
+i.lucide-icon.w-11, i.lucide-icon.h-11, i.lucide-icon.size-11 { font-size: 2.75rem; }
+i.lucide-icon.w-12, i.lucide-icon.h-12, i.lucide-icon.size-12 { font-size: 3rem; }
+i.lucide-icon.w-14, i.lucide-icon.h-14, i.lucide-icon.size-14 { font-size: 3.5rem; }
+i.lucide-icon.w-16, i.lucide-icon.h-16, i.lucide-icon.size-16 { font-size: 4rem; }

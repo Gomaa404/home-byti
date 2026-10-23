@@ -79,7 +79,7 @@ export function CreateTemplateView() {
     setTimeout(() => {
       setIsSubmitting(false);
       toast.success("تم إرسال قالب واتساب للاعتماد الفوري عبر Meta Cloud API بنجاح!");
-      router.push("/dashboard/automation?tab=templates");
+      router.push("/dashboard/automation/?tab=templates");
     }, 800);
   };
 
@@ -89,7 +89,7 @@ export function CreateTemplateView() {
       <div className="bg-white rounded-3xl p-6 border border-[#EBEBEB] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <Link
-            href="/dashboard/automation?tab=templates"
+            href="/dashboard/automation/?tab=templates"
             className="w-9 h-9 rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 transition-colors"
           >
             <ArrowRight className="w-4 h-4" />
@@ -416,7 +416,7 @@ export function CreateTemplateView() {
               </button>
 
               <Link
-                href="/dashboard/automation?tab=templates"
+                href="/dashboard/automation/?tab=templates"
                 className="px-6 h-12 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-semibold flex items-center justify-center transition-colors"
               >
                 إلغاء

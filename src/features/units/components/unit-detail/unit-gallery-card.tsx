@@ -10,17 +10,17 @@ export function UnitGalleryCard() {
   const images = [
     {
       title: "غرفة النوم الرئيسية والمجلس",
-      src: "/images/units/bedroom.jpg",
+      src: "/images/units/bedroom.webp",
       alt: "غرفة النوم الرئيسية والمجلس",
     },
     {
       title: "المطبخ المفتوح وركن الطعام",
-      src: "/images/units/kitchen.jpg",
+      src: "/images/units/kitchen.webp",
       alt: "المطبخ المفتوح وركن الطعام",
     },
     {
       title: "دورة المياه والتجهيزات الفندقية",
-      src: "/images/units/bathroom.jpg",
+      src: "/images/units/bathroom.webp",
       alt: "دورة المياه والتجهيزات الفندقية",
     },
   ];

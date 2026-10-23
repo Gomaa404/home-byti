@@ -46,7 +46,7 @@ export function PropertyAdminActions({
       <div className="space-y-3">
         {/* Action 1: عرض بيانات المالك */}
         <Link
-          href={`/dashboard/owners/${ownerId}`}
+          href={`/dashboard/owners/${ownerId}/`}
           className="w-full bg-[#F5F7F1] hover:bg-[#EAEFE3] rounded-2xl p-3.5 sm:p-4 flex items-center justify-between gap-3 transition-colors group cursor-pointer"
         >
           <div className="flex items-center gap-3 min-w-0">
@@ -113,7 +113,7 @@ export function PropertyAdminActions({
 
         {/* Action 4: عرض سجل النشاط والتدقيق */}
         <Link
-          href={`/dashboard/properties/${propertyId}/activity`}
+          href={`/dashboard/properties/${propertyId}/activity/`}
           className="w-full bg-[#F5F7F1] hover:bg-[#EAEFE3] rounded-2xl p-3.5 sm:p-4 flex items-center justify-between gap-3 transition-colors group cursor-pointer text-right"
         >
           <div className="flex items-center gap-3 min-w-0">
