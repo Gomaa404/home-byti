@@ -28,7 +28,6 @@ import {
 import { cn } from "@/lib/utils";
 import { useUIStore } from "@/stores/use-ui-store";
 import { showUnderConstructionToast } from "@/lib/toast";
-import { useNavigationTrail } from "@/hooks/use-navigation-trail";
 
 const isRouteAvailable = (href: string) => {
   const clean = href.replace(/\/+$/, "");
@@ -77,27 +76,20 @@ export function Sidebar() {
   const router = useRouter();
   const { sidebarOpen, setSidebarOpen } = useUIStore();
   const [currentUser, setCurrentUser] = useState<AuthUser | null>(null);
-  const [optimisticHref, setOptimisticHref] = useState<string | null>(null);
 
   // Normalize pathname to strip basePath (/Edaret_Amlak) and any trailing slash
   const cleanPathname = (pathname || "")
     .replace(/^\/Edaret_Amlak/, "")
     .replace(/\/+$/, "") || "/";
 
-  // Reset optimistic href when URL changes
-  useEffect(() => {
-    setOptimisticHref(null);
-  }, [cleanPathname]);
-
   const isItemActive = (href: string) => {
-    const current = optimisticHref ?? cleanPathname;
     const cleanHref = href.replace(/^\/Edaret_Amlak/, "").replace(/\/+$/, "");
     if (cleanHref === "/dashboard") {
-      return current === "/dashboard" || current === "/";
+      return cleanPathname === "/dashboard" || cleanPathname === "/";
     }
     return (
-      current === cleanHref ||
-      current.startsWith(cleanHref + "/")
+      cleanPathname === cleanHref ||
+      cleanPathname.startsWith(cleanHref + "/")
     );
   };
 
@@ -109,10 +101,8 @@ export function Sidebar() {
     e.preventDefault();
     clearAuthSession();
     toast.success("تم تسجيل الخروج بنجاح");
-    router.push("/login");
+    router.push("/login/");
   };
-
-  const { resetTrail } = useNavigationTrail();
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -122,13 +112,11 @@ export function Sidebar() {
     if (!isRouteAvailable(href)) {
       e.preventDefault();
       showUnderConstructionToast(`صفحة "${title}"`);
-    } else {
-      resetTrail({ title, href });
-      setOptimisticHref(href);
-      if (typeof window !== "undefined" && window.innerWidth < 1024) {
-        // Only close the drawer on mobile overlay mode, keep open on desktop
-        setSidebarOpen(false);
-      }
+      return;
+    }
+    if (typeof window !== "undefined" && window.innerWidth < 1024) {
+      // Only close the drawer on mobile overlay mode, keep open on desktop
+      setSidebarOpen(false);
     }
   };
 

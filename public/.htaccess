@@ -108,8 +108,11 @@ DirectoryIndex index.html
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^(.*)$ $1.html [L]
 
-  # SPA fallback to root index.html for client-side routing
+  # ErrorDocument for 404
+  ErrorDocument 404 /Edaret_Amlak/404/index.html
+
+  # Unknown paths fallback to 404 page instead of home page
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^ index.html [L]
+  RewriteRule ^ 404/index.html [L]
 </IfModule>
