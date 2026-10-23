@@ -53,14 +53,7 @@ export function CleaningTaskCard({
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-[8px] bg-[#4B5940] flex items-center justify-center shrink-0 shadow-3xs">
-            <div className="w-[14px] h-[17px] relative">
-              <Image
-                src="/assets/whatsapp/979c39f2fd55dc2a62835c25e5f351a9ef7cc49f.svg"
-                alt="Cleaning"
-                fill
-                className="object-contain"
-              />
-            </div>
+            <i className="lucide-icon icon-sparkles w-[14px] h-[17px] text-white" />
           </div>
           <h4 className="text-[15px] font-bold font-cairo text-[#181D17]">
             {task.title}
@@ -76,14 +69,7 @@ export function CleaningTaskCard({
       <div className="bg-[#F1F5EB] rounded-[12px] p-3.5 sm:p-4 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
         {/* Row 1, Col 1: Property and Location */}
         <div className="flex items-start gap-2.5">
-          <div className="w-4 h-4 relative shrink-0 mt-0.5">
-            <Image
-              src="/assets/whatsapp/644dce6d0956525aa0d56728f16997735f39a874.svg"
-              alt="Building"
-              fill
-              className="object-contain"
-            />
-          </div>
+          <i className="lucide-icon icon-building-2 w-4 h-4 text-[#75786F] shrink-0 mt-0.5" />
           <div className="space-y-0.5 min-w-0">
             <span className="text-xs font-normal font-cairo text-[#75786F] block">
               العقار والموقع
@@ -96,14 +82,7 @@ export function CleaningTaskCard({
 
         {/* Row 1, Col 2: Unit and Level */}
         <div className="flex items-start gap-2.5">
-          <div className="w-4 h-4 relative shrink-0 mt-0.5">
-            <Image
-              src="/assets/whatsapp/0f7410f480b1596e1a51313aa93ea60483dbb2cb.svg"
-              alt="Unit"
-              fill
-              className="object-contain"
-            />
-          </div>
+          <i className="lucide-icon icon-door-closed w-4 h-4 text-[#75786F] shrink-0 mt-0.5" />
           <div className="space-y-0.5 min-w-0">
             <span className="text-xs font-normal font-cairo text-[#75786F] block">
               الوحدة والمستوى
@@ -116,14 +95,7 @@ export function CleaningTaskCard({
 
         {/* Row 2, Col 1: Departure of previous guest */}
         <div className="flex items-start gap-2.5">
-          <div className="w-4 h-4 relative shrink-0 mt-0.5">
-            <Image
-              src="/assets/whatsapp/9d30d1d40c010f81bf8f3f20d3aa72502d0e210c.svg"
-              alt="Departure"
-              fill
-              className="object-contain"
-            />
-          </div>
+          <i className="lucide-icon icon-log-out w-4 h-4 text-[#75786F] shrink-0 mt-0.5" />
           <div className="space-y-0.5 min-w-0">
             <span className="text-xs font-normal font-cairo text-[#75786F] block">
               مغادرة النزيل السابق
@@ -136,14 +108,7 @@ export function CleaningTaskCard({
 
         {/* Row 2, Col 2: Arrival of next guest (Alert: Bold Red) */}
         <div className="flex items-start gap-2.5">
-          <div className="w-4 h-4 relative shrink-0 mt-0.5">
-            <Image
-              src="/assets/whatsapp/e274a3a6478b8a94884dcf78b9f9f9fb0f953dc3.svg"
-              alt="Arrival"
-              fill
-              className="object-contain"
-            />
-          </div>
+          <i className="lucide-icon icon-log-in w-4 h-4 text-[#BA1A1A] shrink-0 mt-0.5" />
           <div className="space-y-0.5 min-w-0">
             <span className="text-xs font-normal font-cairo text-[#75786F] block">
               وصول النزيل القادم
@@ -172,14 +137,7 @@ export function CleaningTaskCard({
           onClick={handleOpenMap}
           className="flex items-center gap-1.5 text-xs font-semibold font-cairo text-[#34422A] hover:underline cursor-pointer"
         >
-          <div className="w-3 h-4 relative shrink-0">
-            <Image
-              src="/assets/whatsapp/54f45dc0355abf7240d59992109a39027f19e8a8.svg"
-              alt="Google Maps"
-              fill
-              className="object-contain"
-            />
-          </div>
+          <i className="lucide-icon icon-map-pin w-3 h-4 text-[#34422A] shrink-0" />
           <span>عرض إحداثيات العقار عبر خرائط Google</span>
         </button>
       </div>
@@ -227,14 +185,7 @@ export function CleaningTaskCard({
               : "bg-[#D8E8CB] text-[#121F0D]"
           )}
         >
-          <div className="w-4 h-4 relative shrink-0">
-            <Image
-              src="/assets/whatsapp/6cfd0460e19404a7551082c5c029d7a0ff13b969.svg"
-              alt="Accept CTA"
-              fill
-              className="object-contain"
-            />
-          </div>
+          <i className="lucide-icon icon-check w-4 h-4 shrink-0" />
           <span>
             {!isAccepted
               ? `استلام المهمة (${task.code})`
@@ -243,14 +194,7 @@ export function CleaningTaskCard({
         </button>
 
         <div className="flex items-center justify-center gap-1.5 text-center text-xs font-normal font-cairo text-[#75786F]">
-          <div className="w-3 h-3 relative shrink-0">
-            <Image
-              src="/assets/whatsapp/aab2a716045990f39c3bc730cd7683750dbf1e26.svg"
-              alt="Info"
-              fill
-              className="object-contain"
-            />
-          </div>
+          <i className="lucide-icon icon-info w-3 h-3 text-[#75786F] shrink-0" />
           <span>
             أول عامل مؤهل يضغط على استلام المهمة يتم حجزها له تلقائيًا وإرسال كود الباب السري.
           </span>

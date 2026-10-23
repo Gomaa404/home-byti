@@ -28,11 +28,7 @@ export function PropertiesHeader() {
           onClick={handleExport}
           className="bg-white hover:bg-[#F9FAF8] border border-[#E5E8E2] text-[#181D17] h-[44px] px-4 rounded-[12px] text-[14px] font-medium flex items-center gap-2 drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] transition-colors cursor-pointer select-none"
         >
-          <img
-            src="/icons/properties/download.svg"
-            alt=""
-            className="w-[14px] h-[14px]"
-          />
+          <i className="lucide-icon icon-download w-[14px] h-[14px]" />
           <span>تصدير القائمة (CSV / Excel)</span>
         </button>
 
@@ -42,11 +38,7 @@ export function PropertiesHeader() {
           prefetch={true}
           className="bg-[#4B5940] hover:bg-[#3E4A35] text-white h-[44px] px-6 rounded-[12px] text-[14px] font-semibold flex items-center gap-2 drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] transition-colors cursor-pointer select-none"
         >
-          <img
-            src="/icons/properties/plus.svg"
-            alt=""
-            className="w-[12px] h-[12px]"
-          />
+          <i className="lucide-icon icon-plus w-[12px] h-[12px]" />
           <span>إضافة عقار</span>
         </Link>
       </div>

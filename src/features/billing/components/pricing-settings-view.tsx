@@ -97,11 +97,7 @@ export function PricingSettingsView() {
               <div className="flex items-start justify-between">
                 <div className="flex gap-2 items-center">
                   <div className="bg-[#f2e1c0] flex items-center justify-center rounded-[12px] size-[40px] shrink-0">
-                    <img
-                      alt="Annual Plan"
-                      className="size-5"
-                      src="/assets/billing/266f37007e2eded4ab327e8f8431326a23fcc818.svg"
-                    />
+                    <i className="lucide-icon icon-sparkles size-5 text-[#695d43]" />
                   </div>
                   <div>
                     <div className="flex gap-2 items-center">
@@ -159,11 +155,7 @@ export function PricingSettingsView() {
             {/* Bottom active subscribers count */}
             <div className="mt-4 -mx-6 -mb-6 bg-[rgba(242,225,192,0.5)] flex items-center justify-between px-6 py-3 border-t border-[rgba(242,225,192,0.8)]">
               <div className="flex gap-1.5 items-center font-['Cairo'] text-[12px] text-[#454840]">
-                <img
-                  alt=""
-                  className="size-4 opacity-80"
-                  src="/assets/billing/4491f1404eaa45534624a07d14b7e1140ea5a6dd.svg"
-                />
+                <i className="lucide-icon icon-users size-4 opacity-80 text-[#454840]" />
                 <span className="font-semibold">عدد المشتركين النشطين:</span>
               </div>
               <div className="font-['Cairo'] text-[12px]">
@@ -182,11 +174,7 @@ export function PricingSettingsView() {
               <div className="flex items-start justify-between">
                 <div className="flex gap-2 items-center">
                   <div className="bg-[#ebefe6] flex items-center justify-center rounded-[12px] size-[40px] shrink-0">
-                    <img
-                      alt="Monthly Plan"
-                      className="size-5"
-                      src="/assets/billing/2ae73d1daec0f83843013b6588f86949b0f2f3de.svg"
-                    />
+                    <i className="lucide-icon icon-calendar size-5 text-[#34422A]" />
                   </div>
                   <div>
                     <h3 className="font-['Cairo'] font-bold text-[#181d17] text-[18px] leading-[28px]">
@@ -236,11 +224,7 @@ export function PricingSettingsView() {
             {/* Bottom active subscribers count */}
             <div className="mt-4 -mx-6 -mb-6 bg-[rgba(235,239,230,0.5)] flex items-center justify-between px-6 py-3 border-t border-[#e2e7dc]">
               <div className="flex gap-1.5 items-center font-['Cairo'] text-[12px] text-[#454840]">
-                <img
-                  alt=""
-                  className="size-4 opacity-80"
-                  src="/assets/billing/6a0991bdecca29a1d25280f23a64025744a33567.svg"
-                />
+                <i className="lucide-icon icon-users size-4 opacity-80 text-[#454840]" />
                 <span className="font-semibold">عدد المشتركين النشطين:</span>
               </div>
               <div className="font-['Cairo'] text-[12px]">
@@ -329,11 +313,7 @@ export function PricingSettingsView() {
                 className="w-full h-[48px] bg-[#f1f5eb] rounded-[12px] pr-12 pl-4 font-['Cairo'] font-normal text-[#181d17] text-[16px] focus:outline-none focus:ring-2 focus:ring-[#34422a]"
               />
               <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                <img
-                  alt="Calendar"
-                  className="size-5"
-                  src="/assets/billing/11094bd296faa5133bccedd0d99727bfd9da999c.svg"
-                />
+                <i className="lucide-icon icon-calendar size-5 text-[#75786F]" />
               </div>
             </div>
           </div>
@@ -446,11 +426,7 @@ export function PricingSettingsView() {
             onClick={handleConfirmPublish}
             className="bg-[#34422a] hover:bg-[#2b3823] text-white px-7 h-[44px] rounded-[12px] font-['Cairo'] font-semibold text-[14px] flex items-center gap-2 drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] transition-colors cursor-pointer"
           >
-            <img
-              alt=""
-              className="size-4"
-              src="/assets/billing/6cfd0460e19404a7551082c5c029d7a0ff13b969.svg"
-            />
+            <i className="lucide-icon icon-check size-4 text-white" />
             <span>حفظ ونشر التعديلات</span>
           </button>
 
@@ -472,11 +448,7 @@ export function PricingSettingsView() {
 
         {/* Left side auto-save status */}
         <div className="flex items-center gap-1.5 text-[#75786f] font-['Cairo'] font-medium text-[11px]">
-          <img
-            alt=""
-            className="size-3.5 opacity-70"
-            src="/assets/billing/9d8b4df50f329e3083a278afe6a1a56a31238d16.svg"
-          />
+          <i className="lucide-icon icon-clock-3 size-3.5 opacity-70 text-[#75786f]" />
           <span>آخر تحديث تلقائي للمسودة منذ دقيقة واحدة</span>
         </div>
       </div>

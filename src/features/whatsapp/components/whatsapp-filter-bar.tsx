@@ -129,14 +129,8 @@ export function WhatsAppFilterBar({
             <option value="malqa">برج الملقا الفاخر</option>
             <option value="sahafa">مجمع الصحافة السكني</option>
           </select>
-          <div className="absolute end-3 top-1/2 -translate-y-1/2 pointer-events-none w-[9px] h-[5.5px]">
-            <Image
-              src="/assets/whatsapp/ac382fb58d6980b5da7741fc2bc8304a79153882.svg"
-              alt="Arrow down"
-              width={9}
-              height={6}
-              className="object-contain"
-            />
+          <div className="absolute end-3 top-1/2 -translate-y-1/2 pointer-events-none flex items-center justify-center">
+            <i className="lucide-icon icon-chevron-down w-[9px] h-[6px] text-[#75786F]" />
           </div>
         </div>
 
@@ -149,14 +143,8 @@ export function WhatsAppFilterBar({
             placeholder="بحث باسم المستأجر، رقم الوحدة..."
             className="w-full h-[34px] ps-3 pe-9 rounded-[12px] bg-[#EBEFE6] border border-transparent text-xs text-[#181D17] placeholder:text-[#75786F] focus:bg-white focus:border-[#CCD5C5] focus:outline-none focus:ring-1 focus:ring-[#34422A]/20 transition-all font-cairo"
           />
-          <div className="absolute end-3 top-1/2 -translate-y-1/2 pointer-events-none w-[13.5px] h-[13.5px]">
-            <Image
-              src="/assets/whatsapp/c79bda9dae8b5f320db5df33e7833dc3589f90ca.svg"
-              alt="Search"
-              width={14}
-              height={14}
-              className="object-contain"
-            />
+          <div className="absolute end-3 top-1/2 -translate-y-1/2 pointer-events-none flex items-center justify-center">
+            <i className="lucide-icon icon-search w-[13.5px] h-[13.5px] text-[#75786F]" />
           </div>
         </div>
       </div>

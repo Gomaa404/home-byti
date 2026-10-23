@@ -46,11 +46,7 @@ export function PropertiesFilters({
           className="w-full h-[40px] pe-4 ps-11 rounded-[12px] bg-[#F6F7F4] border border-transparent text-[12px] text-[#181D17] placeholder:text-[#73786F]/70 focus:bg-white focus:border-[#4B5940] focus:outline-none focus:ring-1 focus:ring-[#4B5940] transition-all font-medium"
         />
         <div className="absolute start-3.5 top-1/2 -translate-y-1/2 pointer-events-none">
-          <img
-            src="/icons/properties/search.svg"
-            alt=""
-            className="w-[15px] h-[15px]"
-          />
+          <i className="lucide-icon icon-search w-[15px] h-[15px] text-[#73786F]" />
         </div>
       </div>
 

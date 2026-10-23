@@ -96,11 +96,7 @@ export function UnitSidebarCards({
           className="bg-[#E5EAE0] hover:bg-[#D8E0D2] rounded-[12px] px-4 py-2.5 flex items-center justify-center gap-2 font-bold text-[#181D17] text-[12px] leading-[18px] w-full transition-colors cursor-pointer select-none"
         >
           <span>عرض سجل العقار بالكامل</span>
-          <img
-            src="/icons/units/external-link.svg"
-            alt=""
-            className="size-[13.5px] shrink-0"
-          />
+          <i className="lucide-icon icon-external-link size-[13.5px] shrink-0" />
         </Link>
       </div>
 
@@ -125,11 +121,7 @@ export function UnitSidebarCards({
               <span className="font-bold text-[#181D17] text-[14px] leading-[20px]">
                 {ownerName}
               </span>
-              <img
-                src="/icons/units/verified-check.svg"
-                alt=""
-                className="w-[14.7px] h-[14px] shrink-0"
-              />
+              <i className="lucide-icon icon-check-circle-2 w-[14.7px] h-[14px] shrink-0 text-[#4B5940]" />
             </div>
           </div>
 
@@ -164,11 +156,7 @@ export function UnitSidebarCards({
           className="bg-[#E5EAE0] hover:bg-[#D8E0D2] rounded-[12px] px-4 py-2.5 flex items-center justify-center gap-2 font-bold text-[#181D17] text-[12px] leading-[18px] w-full transition-colors cursor-pointer select-none"
         >
           <span>عرض ملف المالك المعتمد</span>
-          <img
-            src="/icons/units/owner-profile.svg"
-            alt=""
-            className="size-[15px] shrink-0"
-          />
+          <i className="lucide-icon icon-user size-[15px] shrink-0" />
         </Link>
       </div>
 
@@ -187,11 +175,7 @@ export function UnitSidebarCards({
           {/* Operational Item 1 */}
           <div className="bg-[#F1F5EB] rounded-[12px] p-3 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <img
-                src="/icons/units/op-cleaning.svg"
-                alt=""
-                className="w-[15px] h-[18.3px] shrink-0"
-              />
+              <i className="lucide-icon icon-sparkles w-[15px] h-[18.3px] shrink-0 text-[#75786F]" />
               <div className="flex flex-col">
                 <span className="font-medium text-[#75786F] text-[11px] leading-[16px]">
                   آخر تنظيف وتعقيم
@@ -209,11 +193,7 @@ export function UnitSidebarCards({
           {/* Operational Item 2 */}
           <div className="bg-[#F1F5EB] rounded-[12px] p-3 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <img
-                src="/icons/units/op-maintenance.svg"
-                alt=""
-                className="w-[16.6px] h-[17.5px] shrink-0"
-              />
+              <i className="lucide-icon icon-wrench w-[16.6px] h-[17.5px] shrink-0 text-[#75786F]" />
               <div className="flex flex-col">
                 <span className="font-medium text-[#75786F] text-[11px] leading-[16px]">
                   آخر بلاغ صيانة
@@ -231,11 +211,7 @@ export function UnitSidebarCards({
           {/* Operational Item 3 */}
           <div className="bg-[#F1F5EB] rounded-[12px] p-3 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <img
-                src="/icons/units/op-battery.svg"
-                alt=""
-                className="w-[16.7px] h-[8.3px] shrink-0"
-              />
+              <i className="lucide-icon icon-battery-charging w-[16.7px] h-[8.3px] shrink-0 text-[#75786F]" />
               <div className="flex flex-col">
                 <span className="font-medium text-[#75786F] text-[11px] leading-[16px]">
                   بطارية القفل الذكي
@@ -253,11 +229,7 @@ export function UnitSidebarCards({
           {/* Operational Item 4 */}
           <div className="bg-[#F1F5EB] rounded-[12px] p-3 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <img
-                src="/icons/units/op-smoke.svg"
-                alt=""
-                className="w-[16.7px] h-[11.8px] shrink-0"
-              />
+              <i className="lucide-icon icon-flame w-[16.7px] h-[11.8px] shrink-0 text-[#75786F]" />
               <div className="flex flex-col">
                 <span className="font-medium text-[#75786F] text-[11px] leading-[16px]">
                   حساسات السلامة والحريق
@@ -280,11 +252,7 @@ export function UnitSidebarCards({
           className="bg-[#E5EAE0] hover:bg-[#D8E0D2] rounded-[12px] px-4 py-2.5 flex items-center justify-center gap-2 font-bold text-[#181D17] text-[12px] leading-[18px] w-full transition-colors cursor-pointer select-none"
         >
           <span>عرض سجل العمليات والتشغيل</span>
-          <img
-            src="/icons/units/op-history.svg"
-            alt=""
-            className="size-[13.5px] shrink-0"
-          />
+          <i className="lucide-icon icon-history size-[13.5px] shrink-0" />
         </button>
       </div>
     </div>

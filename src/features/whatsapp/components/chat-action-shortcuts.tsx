@@ -44,14 +44,7 @@ export function ChatActionShortcuts({
               : "bg-[#D8E8CB] text-[#121F0D]"
           )}
         >
-          <div className="w-3.5 h-3.5 relative shrink-0">
-            <Image
-              src="/assets/whatsapp/2ee4c9e85e09c54c128777de06ea13286d224d6e.svg"
-              alt="Accept"
-              fill
-              className="object-contain"
-            />
-          </div>
+          <i className="lucide-icon icon-check w-3.5 h-3.5 shrink-0" />
           <span>{isAccepted ? "تم الاستلام" : "استلام المهمة"}</span>
         </button>
 
@@ -69,14 +62,7 @@ export function ChatActionShortcuts({
               : "bg-[#34422A] hover:bg-[#283420] text-white font-bold cursor-pointer"
           )}
         >
-          <div className="w-3.5 h-3.5 relative shrink-0">
-            <Image
-              src="/assets/whatsapp/c083c4baa92bd36090235530d3aea08b05ec67a5.svg"
-              alt="Start Cleaning"
-              fill
-              className="object-contain"
-            />
-          </div>
+          <i className="lucide-icon icon-sparkles w-3.5 h-3.5 shrink-0" />
           <span>{isInProgress ? "جاري التنظيف" : "بدء التنظيف"}</span>
         </button>
 
@@ -92,14 +78,7 @@ export function ChatActionShortcuts({
               : "bg-[#EBEFE6] hover:bg-[#DFE4DB] text-[#181D17] cursor-pointer"
           )}
         >
-          <div className="w-3.5 h-3.5 relative shrink-0">
-            <Image
-              src="/assets/whatsapp/4cbbdf56a71d38ff540c4965dd629fb9df1ff213.svg"
-              alt="Photos"
-              fill
-              className="object-contain"
-            />
-          </div>
+          <i className="lucide-icon icon-camera w-3.5 h-3.5 shrink-0" />
           <span>رفع الصور ({photoCount}/4)</span>
         </button>
 
@@ -117,14 +96,7 @@ export function ChatActionShortcuts({
               : "bg-[#34422A] hover:bg-[#283420] text-white font-bold cursor-pointer"
           )}
         >
-          <div className="w-3.5 h-3.5 relative shrink-0">
-            <Image
-              src="/assets/whatsapp/7143e788f97ace842f819b1f306b8e9696ca89be.svg"
-              alt="Complete"
-              fill
-              className="object-contain"
-            />
-          </div>
+          <i className="lucide-icon icon-check-check w-3.5 h-3.5 shrink-0" />
           <span>{isCompleted ? "تم إنهاء التنظيف" : "إنهاء التنظيف"}</span>
         </button>
 
@@ -134,14 +106,7 @@ export function ChatActionShortcuts({
           onClick={onOpenLocation}
           className="bg-white hover:bg-[#F6FBF1] text-[#181D17] border border-[#E2E6DC] flex items-center gap-1.5 px-3 py-1.5 rounded-[12px] text-xs font-medium font-cairo transition-all cursor-pointer shadow-3xs whitespace-nowrap"
         >
-          <div className="w-3.5 h-3.5 relative shrink-0">
-            <Image
-              src="/assets/whatsapp/8168bfef55589e924662e87151fe16457c88a478.svg"
-              alt="Location"
-              fill
-              className="object-contain"
-            />
-          </div>
+          <i className="lucide-icon icon-map-pin w-3.5 h-3.5 shrink-0" />
           <span>فتح الموقع</span>
         </button>
       </div>

@@ -39,11 +39,7 @@ export function UnitHeroCard({
         </div>
 
         <div className="flex items-center gap-2 text-[#75786F] text-[14px] leading-[22px] flex-wrap">
-          <img
-            src="/icons/units/hero-building.svg"
-            alt=""
-            className="size-[13.5px] shrink-0"
-          />
+          <i className="lucide-icon icon-building-2 size-[13.5px] shrink-0" />
           <span>{propertyName}</span>
           <span>•</span>
           <span>{location}</span>

@@ -22,14 +22,7 @@ export function ChatFeed({ messages, taskStatus, onAcceptTask }: ChatFeedProps) 
           return (
             <div key={msg.id} className="flex items-center justify-center py-2">
               <div className="bg-[#EBEFE6] shadow-[0px_1px_1px_rgba(0,0,0,0.05)] px-3.5 py-1.5 rounded-full flex items-center gap-2 border border-[#CCD5C5]/40">
-                <div className="w-[14px] h-[8px] relative shrink-0">
-                  <Image
-                    src="/assets/whatsapp/3a5a6ee43ac4c0afdc6c002d5fa1722d0f107f32.svg"
-                    alt="System key"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
+                <i className="lucide-icon icon-key-round w-[14px] h-[8px] text-[#454840] shrink-0" />
                 <span className="text-[11px] font-medium font-cairo text-[#454840]">
                   {msg.content}
                 </span>
@@ -46,14 +39,7 @@ export function ChatFeed({ messages, taskStatus, onAcceptTask }: ChatFeedProps) 
                 {/* Header: System tag on right, Time on left */}
                 <div className="flex items-center justify-between pb-1 border-b border-[#F0F3EC]">
                   <div className="flex items-center gap-1.5 text-[11px] font-semibold font-cairo text-[#54624C]">
-                    <div className="w-[13px] h-[11px] relative shrink-0">
-                      <Image
-                        src="/assets/whatsapp/22d2e41c21bdef16fa861935e74b5c6a0b8a4363.svg"
-                        alt="Automation"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
+                    <i className="lucide-icon icon-bot w-[13px] h-[11px] text-[#54624C] shrink-0" />
                     <span>رسالة ترحيبية آلية (النظام)</span>
                   </div>
                   <span className="text-[11px] font-medium font-cairo text-[#75786F]">
@@ -85,14 +71,7 @@ export function ChatFeed({ messages, taskStatus, onAcceptTask }: ChatFeedProps) 
                   <span className="text-[11px] font-normal font-cairo text-[#54624C]">
                     تم التوصيل
                   </span>
-                  <div className="w-[15px] h-[8px] relative shrink-0">
-                    <Image
-                      src="/assets/whatsapp/27c4e6623c101048170f6aa96f1d1594d5280a81.svg"
-                      alt="Delivered"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
+                  <i className="lucide-icon icon-check-check w-[15px] h-[8px] text-[#54624C] shrink-0" />
                 </div>
               </div>
             </div>
@@ -134,14 +113,7 @@ export function ChatFeed({ messages, taskStatus, onAcceptTask }: ChatFeedProps) 
               >
                 <span>{msg.time}</span>
                 {isMe && (
-                  <div className="w-[12px] h-[6px] relative shrink-0">
-                    <Image
-                      src="/assets/whatsapp/27c4e6623c101048170f6aa96f1d1594d5280a81.svg"
-                      alt="Status"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
+                  <i className="lucide-icon icon-check-check w-[12px] h-[6px] text-white/70 shrink-0" />
                 )}
               </div>
             </div>

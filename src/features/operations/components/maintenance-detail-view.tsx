@@ -217,7 +217,7 @@ export function MaintenanceDetailView({ ticketId = "MT-2048" }: MaintenanceDetai
                   <div
                     className="w-14 h-14 rounded-xl bg-gray-200 bg-cover bg-center shrink-0 border border-gray-300"
                     style={{
-                      backgroundImage: `url('/assets/operations/117189a045a7d298bbe42b788d51c79af6017e3a.png')`,
+                      backgroundImage: `url('/images/operations/maintenance_1.webp')`,
                     }}
                   />
                   <div className="text-xs">
@@ -231,7 +231,7 @@ export function MaintenanceDetailView({ ticketId = "MT-2048" }: MaintenanceDetai
                   <div
                     className="w-14 h-14 rounded-xl bg-gray-200 bg-cover bg-center shrink-0 border border-gray-300"
                     style={{
-                      backgroundImage: `url('/assets/operations/c8aee9b42126e0acff492f85b787e0f9afd3c774.png')`,
+                      backgroundImage: `url('/images/operations/maintenance_2.webp')`,
                     }}
                   />
                   <div className="text-xs">

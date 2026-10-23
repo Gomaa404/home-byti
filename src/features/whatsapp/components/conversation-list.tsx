@@ -66,14 +66,7 @@ export function ConversationList({
               className="w-8 h-8 rounded-[8px] bg-[#EBEFE6] hover:bg-[#DFE4DB] flex items-center justify-center transition-colors cursor-pointer"
               title="تحديث المحادثات"
             >
-              <div className="w-[13px] h-[13px] relative">
-                <Image
-                  src="/assets/whatsapp/b3a5cf51e0584d958e1b26fd8e746ba14be23821.svg"
-                  alt="Refresh"
-                  fill
-                  className="object-contain"
-                />
-              </div>
+              <i className="lucide-icon icon-refresh-cw w-[13px] h-[13px] text-[#181D17]" />
             </button>
             <button
               type="button"
@@ -84,14 +77,7 @@ export function ConversationList({
               className="w-8 h-8 rounded-[8px] bg-[#EBEFE6] hover:bg-[#DFE4DB] flex items-center justify-center transition-colors cursor-pointer"
               title="محادثة جديدة"
             >
-              <div className="w-4 h-4 relative">
-                <Image
-                  src="/assets/whatsapp/bc66f3a54f35d8907ff57091e91295e921da14b2.svg"
-                  alt="New chat"
-                  fill
-                  className="object-contain"
-                />
-              </div>
+              <i className="lucide-icon icon-message-square-plus w-4 h-4 text-[#181D17]" />
             </button>
           </div>
         </div>
@@ -105,14 +91,8 @@ export function ConversationList({
             placeholder="بحث في محادثات الطاقم الميداني..."
             className="w-full h-[34px] ps-3 pe-9 rounded-[12px] bg-[#F1F5EB] border border-transparent text-xs text-[#181D17] placeholder:text-[#75786F] focus:bg-white focus:border-[#CCD5C5] focus:outline-none focus:ring-1 focus:ring-[#34422A]/20 transition-all font-cairo"
           />
-          <div className="absolute end-3 top-1/2 -translate-y-1/2 pointer-events-none w-[13.5px] h-[13.5px]">
-            <Image
-              src="/assets/whatsapp/c79bda9dae8b5f320db5df33e7833dc3589f90ca.svg"
-              alt="Search"
-              width={14}
-              height={14}
-              className="object-contain"
-            />
+          <div className="absolute end-3 top-1/2 -translate-y-1/2 pointer-events-none flex items-center justify-center">
+            <i className="lucide-icon icon-search w-[13.5px] h-[13.5px] text-[#75786F]" />
           </div>
         </div>
 
@@ -190,14 +170,7 @@ export function ConversationList({
                   }}
                 >
                   {item.isIconAvatar ? (
-                    <div className="w-[18px] h-[18px] relative">
-                      <Image
-                        src="/assets/whatsapp/f4ef631abfd758ab386d94f7bf85e7208a9f817c.svg"
-                        alt="Warehouse"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
+                    <i className="lucide-icon icon-warehouse w-[18px] h-[18px]" />
                   ) : (
                     item.avatarText
                   )}
@@ -262,34 +235,13 @@ export function ConversationList({
                     >
                       <span>{item.tag.text}</span>
                       {item.tag.type === "task" && (
-                        <div className="w-[10px] h-[12px] relative shrink-0">
-                          <Image
-                            src="/assets/whatsapp/00da1b0e5b271dced19524a98145976754e43562.svg"
-                            alt="Task"
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
+                        <i className="lucide-icon icon-clipboard-list w-[10px] h-[12px] text-[#121F0D] shrink-0" />
                       )}
                       {item.tag.type === "inspected" && (
-                        <div className="w-[12px] h-[7px] relative shrink-0">
-                          <Image
-                            src="/assets/whatsapp/9a60284876499195e7690c541d12b937a8839a84.svg"
-                            alt="Inspected"
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
+                        <i className="lucide-icon icon-check-check w-[12px] h-[7px] text-[#454840] shrink-0" />
                       )}
                       {item.tag.type === "quality" && (
-                        <div className="w-[12px] h-[12px] relative shrink-0">
-                          <Image
-                            src="/assets/whatsapp/548f722fea730cf27e48b823638d94ba09b2a892.svg"
-                            alt="Quality"
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
+                        <i className="lucide-icon icon-shield-check w-[12px] h-[12px] text-[#454840] shrink-0" />
                       )}
                     </div>
                   )}

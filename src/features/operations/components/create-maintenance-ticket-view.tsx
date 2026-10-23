@@ -482,7 +482,7 @@ export function CreateMaintenanceTicketView() {
                 <div
                   className="absolute inset-0 bg-cover bg-center opacity-80"
                   style={{
-                    backgroundImage: `url('/assets/operations/43efbbc00559a2457719e7e49b795cd6927bda6b.png')`,
+                    backgroundImage: `url('/images/operations/maintenance_6.webp')`,
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />

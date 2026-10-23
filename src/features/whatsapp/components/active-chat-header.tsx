@@ -60,14 +60,7 @@ export function ActiveChatHeader({
           onClick={handleOpenDetails}
           className="bg-[#EBEFE6] hover:bg-[#DFE4DB] text-[#181D17] transition-all flex items-center gap-2 px-3 py-1.5 rounded-[12px] text-xs font-semibold font-cairo cursor-pointer shadow-3xs"
         >
-          <div className="w-[15px] h-[15px] relative shrink-0">
-            <Image
-              src="/assets/whatsapp/4531112dadf03e39fcb1c5f651935f0b6b802ad5.svg"
-              alt="Worker icon"
-              fill
-              className="object-contain"
-            />
-          </div>
+          <i className="lucide-icon icon-user w-[15px] h-[15px] shrink-0 text-[#181D17]" />
           <span>بيانات العامل</span>
         </button>
       </div>

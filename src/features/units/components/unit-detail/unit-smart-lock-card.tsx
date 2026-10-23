@@ -45,11 +45,7 @@ export function UnitSmartLockCard({
           <span className="font-semibold text-[#3E8A5A] text-[11px] leading-[16px]">
             بوابة IoT متزامنة
           </span>
-          <img
-            src="/icons/units/iot-gateway.svg"
-            alt=""
-            className="w-[9.3px] h-[12.25px] shrink-0"
-          />
+          <i className="lucide-icon icon-wifi w-[9.3px] h-[12.25px] shrink-0 text-[#3E8A5A]" />
         </div>
       </div>
 
@@ -72,11 +68,7 @@ export function UnitSmartLockCard({
               className="bg-white rounded-[8px] px-3 py-1 drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex items-center gap-1.5 text-[#34422A] text-[11px] font-bold cursor-pointer hover:bg-[#F9FAF7] transition-colors select-none"
             >
               <span>{revealed ? "إخفاء الكود" : "عرض كود الدخول"}</span>
-              <img
-                src="/icons/units/eye-code.svg"
-                alt=""
-                className="w-[14.7px] h-[10px] shrink-0"
-              />
+              <i className="lucide-icon icon-eye w-[14.7px] h-[10px] shrink-0" />
             </button>
           </div>
 
@@ -106,11 +98,7 @@ export function UnitSmartLockCard({
       <div className="flex items-center justify-between pt-1 flex-wrap gap-3">
         {/* Right Info: Auto-invalidation notice */}
         <div className="flex items-center gap-2">
-          <img
-            src="/icons/units/shield-check.svg"
-            alt=""
-            className="w-[12px] h-[15px] shrink-0"
-          />
+          <i className="lucide-icon icon-shield-check w-[12px] h-[15px] shrink-0 text-[#75786F]" />
           <span className="font-medium text-[#75786F] text-[11px] leading-[16px]">
             يتم إبطال الكود تلقائياً وتجديده بعد مغادرة النزيل واعتماد النظافة
           </span>

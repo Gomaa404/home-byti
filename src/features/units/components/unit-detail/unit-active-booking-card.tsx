@@ -40,11 +40,7 @@ export function UnitActiveBookingCard({
       <div className="flex items-center justify-between pb-4 border-b border-[#F1F5EB]/60">
         {/* Right Info: Icon + Title + Subtitle */}
         <div className="flex items-center gap-2.5">
-          <img
-            src="/icons/units/calendar-booking.svg"
-            alt=""
-            className="w-[22px] h-[15px] shrink-0"
-          />
+          <i className="lucide-icon icon-calendar w-[22px] h-[15px] shrink-0 text-[#34422A]" />
           <div className="flex flex-col text-right">
             <h3 className="font-bold text-[#181D17] text-[18px] leading-[28px]">
               الحجز الحالي المسجل
@@ -134,11 +130,7 @@ export function UnitActiveBookingCard({
           className="flex items-center gap-1.5 font-bold text-[#34422A] text-[12px] leading-[18px] hover:underline cursor-pointer select-none"
         >
           <span>عرض تفاصيل الحجز</span>
-          <img
-            src="/icons/units/arrow-booking.svg"
-            alt=""
-            className="size-[10.7px] shrink-0"
-          />
+          <i className="lucide-icon icon-arrow-up-right size-[10.7px] shrink-0" />
         </Link>
       </div>
     </div>

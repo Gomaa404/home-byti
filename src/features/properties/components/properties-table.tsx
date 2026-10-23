@@ -290,11 +290,7 @@ export function PropertiesTable() {
                     <td className="py-4 px-6 text-start">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-[12px] bg-[#EBEFE6] flex items-center justify-center shrink-0">
-                          <img
-                            src="/icons/properties/building.svg"
-                            alt=""
-                            className="w-[15px] h-[15px]"
-                          />
+                          <i className="lucide-icon icon-building-2 w-[15px] h-[15px] text-[#4B5940]" />
                         </div>
                         <div>
                           <Link
@@ -321,11 +317,7 @@ export function PropertiesTable() {
                             <span className="font-bold text-[14px] leading-[20px] text-[#1E241C]">
                               {property.ownerName}
                             </span>
-                            <img
-                              src="/icons/properties/external-link.svg"
-                              alt=""
-                              className="w-3.5 h-3.5 opacity-80"
-                            />
+                            <i className="lucide-icon icon-external-link w-3.5 h-3.5 opacity-80" />
                           </div>
                           <div className="text-[11px] font-normal leading-[16px] text-[#73786F] mt-0.5 text-right">
                             {property.ownerEmail}
@@ -341,11 +333,7 @@ export function PropertiesTable() {
                           {property.city}
                         </div>
                         <div className="flex items-center gap-1 text-[14px] font-normal leading-[22px] text-[#181D17]">
-                          <img
-                            src="/icons/properties/location-pin.svg"
-                            alt=""
-                            className="w-[12px] h-[15px] shrink-0"
-                          />
+                          <i className="lucide-icon icon-map-pin w-[12px] h-[15px] shrink-0 text-[#73786F]" />
                           <span>{property.district}</span>
                         </div>
                       </div>
@@ -400,11 +388,7 @@ export function PropertiesTable() {
                       <div className="flex justify-center">
                         <ActionDropdown
                           triggerIcon={
-                            <img
-                              src="/icons/properties/dots-menu.svg"
-                              alt=""
-                              className="w-4 h-4 text-[#78716C]"
-                            />
+                            <i className="lucide-icon icon-ellipsis-vertical w-4 h-4 text-[#78716C]" />
                           }
                           triggerClassName="w-8 h-8 rounded-[8px] hover:bg-[#EBEFE6] text-[#78716C]"
                           items={[
@@ -513,11 +497,7 @@ export function PropertiesTable() {
               )}
             >
               <span>السابق</span>
-              <img
-                src="/icons/properties/arrow-prev.svg"
-                alt=""
-                className="w-3.5 h-3.5"
-              />
+              <i className="lucide-icon icon-chevron-right w-3.5 h-3.5" />
             </button>
 
             {/* Current Active Page */}
@@ -537,11 +517,7 @@ export function PropertiesTable() {
                   : "text-[#181D17] hover:bg-[#F9FAF8] cursor-pointer"
               )}
             >
-              <img
-                src="/icons/properties/arrow-next.svg"
-                alt=""
-                className="w-3.5 h-3.5"
-              />
+              <i className="lucide-icon icon-chevron-left w-3.5 h-3.5" />
               <span>التالي</span>
             </button>
           </div>

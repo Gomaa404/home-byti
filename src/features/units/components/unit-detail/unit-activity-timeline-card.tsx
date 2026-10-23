@@ -95,11 +95,7 @@ export function UnitActivityTimelineCard({
           onClick={onOpenOperationsLog}
           className="bg-[#F1F5EB] hover:bg-[#E5ECE0] rounded-[12px] px-4 py-2 flex items-center gap-1.5 font-bold text-[#34422A] text-[12px] leading-[18px] transition-colors cursor-pointer select-none"
         >
-          <img
-            src="/icons/units/arrow-activity.svg"
-            alt=""
-            className="size-[10.7px] shrink-0"
-          />
+          <i className="lucide-icon icon-arrow-up-right size-[10.7px] shrink-0" />
           <span>عرض سجل النشاط الكامل</span>
         </button>
       </div>

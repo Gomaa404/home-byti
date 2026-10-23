@@ -1,5 +1,7 @@
 "use client";
 
+import { cn } from "@/lib/utils";
+
 interface UnitSpecsCardProps {
   unitNumber?: string;
   unitType?: string;
@@ -24,31 +26,31 @@ export function UnitSpecsCard({
   const amenities = [
     {
       label: "شاشة تلفاز ذكية 55 بوصة",
-      icon: "/icons/units/tv.svg",
+      iconClass: "icon-tv",
       iconWidth: 13.3,
       iconHeight: 12,
     },
     {
       label: "مطبخ أمريكي مجهز بالكامل",
-      icon: "/icons/units/kitchen.svg",
+      iconClass: "icon-utensils",
       iconWidth: 10.7,
       iconHeight: 13.3,
     },
     {
       label: "تكييف مركزي مخصص",
-      icon: "/icons/units/ac.svg",
+      iconClass: "icon-wind",
       iconWidth: 13.3,
       iconHeight: 13.3,
     },
     {
       label: "ألياف بصرية فائقة السرعة",
-      icon: "/icons/units/fiber.svg",
+      iconClass: "icon-wifi",
       iconWidth: 16,
       iconHeight: 11.3,
     },
     {
       label: "إطلالة هادئة على بهو المبنى",
-      icon: "/icons/units/balcony.svg",
+      iconClass: "icon-sun",
       iconWidth: 14.7,
       iconHeight: 10,
     },
@@ -174,11 +176,9 @@ export function UnitSpecsCard({
               className="bg-[#E5EAE0] rounded-[8px] px-3 py-1.5 flex items-center gap-1.5 text-[13px] font-normal text-[#181D17] leading-[20px]"
             >
               <span>{item.label}</span>
-              <img
-                src={item.icon}
-                alt=""
-                style={{ width: `${item.iconWidth}px`, height: `${item.iconHeight}px` }}
-                className="shrink-0"
+              <i
+                className={cn("lucide-icon shrink-0 text-[#181D17]", item.iconClass)}
+                style={{ fontSize: `${item.iconHeight}px` }}
               />
             </div>
           ))}

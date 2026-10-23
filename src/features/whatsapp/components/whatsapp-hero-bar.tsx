@@ -38,14 +38,7 @@ export function WhatsAppHeroBar() {
           className="bg-[#EBEFE6] hover:bg-[#E2E7DC] transition-colors flex items-center gap-2 px-3 py-1.5 rounded-[12px] cursor-pointer shadow-3xs"
           title="انقر لتحديث المزامنة"
         >
-          <div className="w-3 h-3 relative shrink-0">
-            <Image
-              src="/assets/whatsapp/aea3990d2fd1ed794e65daeab59e7f4792082a91.svg"
-              alt="Sync icon"
-              fill
-              className="object-contain"
-            />
-          </div>
+          <i className="lucide-icon icon-refresh-cw w-3 h-3 text-[#454840] shrink-0" />
           <span className="text-xs font-semibold font-cairo text-[#454840]">
             مزامنة فورية للطلبات
           </span>

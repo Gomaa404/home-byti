@@ -42,14 +42,7 @@ export function ChatComposer({
             className="w-10 h-10 rounded-[12px] hover:bg-[#DFE4DB] flex items-center justify-center transition-colors cursor-pointer shrink-0"
             title="إرفاق ملف أو صورة"
           >
-            <div className="w-[10.5px] h-[16.5px] relative">
-              <Image
-                src="/assets/whatsapp/4ac25473961b9c278d8f078cc6b01b56989687f6.svg"
-                alt="Attach"
-                fill
-                className="object-contain"
-              />
-            </div>
+            <i className="lucide-icon icon-paperclip w-[14px] h-[16px] text-[#75786F]" />
           </button>
 
           {/* 2. Text Input */}
@@ -69,14 +62,7 @@ export function ChatComposer({
             disabled={!inputText.trim()}
             className="bg-[#34422A] hover:bg-[#283320] disabled:opacity-50 disabled:cursor-not-allowed text-white h-10 px-4 rounded-[12px] flex items-center gap-1.5 transition-all shadow-3xs cursor-pointer shrink-0 font-cairo font-semibold text-xs"
           >
-            <div className="w-[13px] h-[11px] relative shrink-0">
-              <Image
-                src="/assets/whatsapp/3af4893cad02703a8bb0d55375b7169d4dae9d7f.svg"
-                alt="Send"
-                fill
-                className="object-contain"
-              />
-            </div>
+            <i className="lucide-icon icon-send w-[13px] h-[11px] text-white" />
             <span>إرسال</span>
           </button>
         </div>

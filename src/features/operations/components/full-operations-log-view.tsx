@@ -352,7 +352,7 @@ export function FullOperationsLogView({ unitId = "204" }: FullOperationsLogViewP
                   <div
                     className="h-28 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
                     style={{
-                      backgroundImage: `url('/assets/operations/1ffb7edd8c66d494a0b93c2e975fad7a317c6a79.png')`,
+                      backgroundImage: `url('/images/operations/maintenance_3.webp')`,
                     }}
                   />
                   <div className="p-2 text-center text-[11px] font-bold text-[#1F2937]">
@@ -364,7 +364,7 @@ export function FullOperationsLogView({ unitId = "204" }: FullOperationsLogViewP
                   <div
                     className="h-28 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
                     style={{
-                      backgroundImage: `url('/assets/operations/0f0efae597a6954b97f7e1aff00492f3c9e3e436.png')`,
+                      backgroundImage: `url('/images/operations/maintenance_4.webp')`,
                     }}
                   />
                   <div className="p-2 text-center text-[11px] font-bold text-[#1F2937]">
@@ -376,7 +376,7 @@ export function FullOperationsLogView({ unitId = "204" }: FullOperationsLogViewP
                   <div
                     className="h-28 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
                     style={{
-                      backgroundImage: `url('/assets/operations/25bc465c95de65e25236f3886563b7d1a8bd193d.png')`,
+                      backgroundImage: `url('/images/operations/maintenance_5.webp')`,
                     }}
                   />
                   <div className="p-2 text-center text-[11px] font-bold text-[#1F2937]">
@@ -388,7 +388,7 @@ export function FullOperationsLogView({ unitId = "204" }: FullOperationsLogViewP
                   <div
                     className="h-28 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
                     style={{
-                      backgroundImage: `url('/assets/operations/43efbbc00559a2457719e7e49b795cd6927bda6b.png')`,
+                      backgroundImage: `url('/images/operations/maintenance_6.webp')`,
                     }}
                   />
                   <div className="p-2 text-center text-[11px] font-bold text-[#1F2937]">

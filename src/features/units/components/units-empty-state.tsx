@@ -35,21 +35,13 @@ export function UnitsEmptyState({ onRefresh, onAddUnit }: UnitsEmptyStateProps) 
       {/* Central Decorative Icon Container */}
       <div className="relative z-10">
         <div className="border border-[#D9E3D5] rounded-[16px] w-24 h-24 flex items-center justify-center p-1 relative shadow-[inset_0px_2px_4px_0px_rgba(0,0,0,0.05)]" style={{ backgroundImage: "linear-gradient(135deg, rgb(234, 241, 232) 0%, rgb(245, 241, 232) 100%)" }}>
-          {/* Door icon SVG from Figma */}
-          <img
-            src="/assets/units/34ebd89eea8a9512be4213e6ac082dcc245a76b3.svg"
-            alt=""
-            className="w-[30px] h-[30px]"
-          />
+          {/* Door icon */}
+          <i className="lucide-icon icon-door-closed w-[30px] h-[30px] text-[#4B5940]" />
         </div>
 
         {/* Plus Badge on Top-Right Corner */}
         <div className="absolute bg-[#4B5940] border-2 border-white rounded-full w-7 h-7 -top-1.5 -end-1.5 flex items-center justify-center shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1)]">
-          <img
-            src="/assets/units/8d1a6f7e795fd59752a4524a82595ffe02b28c05.svg"
-            alt=""
-            className="w-2.5 h-2.5"
-          />
+          <i className="lucide-icon icon-plus w-2.5 h-2.5 text-white" />
         </div>
       </div>
 
@@ -71,11 +63,7 @@ export function UnitsEmptyState({ onRefresh, onAddUnit }: UnitsEmptyStateProps) 
           onClick={handleRefresh}
           className="bg-[#F7F8F5] border border-[#E5E8E2] text-[#303A2C] text-sm font-semibold h-12 px-6 rounded-[12px] flex items-center gap-2 hover:bg-[#EEF2E6] transition-all cursor-pointer select-none"
         >
-          <img
-            src="/assets/units/bc4e361773659eaf62ec9ad49faa198433e39453.svg"
-            alt=""
-            className="w-3 h-3"
-          />
+          <i className="lucide-icon icon-refresh-cw w-3 h-3 text-[#303A2C]" />
           <span>تحديث الصفحة</span>
         </button>
 
@@ -85,11 +73,7 @@ export function UnitsEmptyState({ onRefresh, onAddUnit }: UnitsEmptyStateProps) 
           onClick={handleAdd}
           className="bg-[#4B5940] hover:bg-[#3D4C35] text-white text-sm font-bold h-12 px-8 rounded-[12px] flex items-center gap-2 shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1)] transition-all cursor-pointer select-none"
         >
-          <img
-            src="/assets/units/995b6a2f4aca9f4d80693e4dca226b851d6fca51.svg"
-            alt=""
-            className="w-3 h-3"
-          />
+          <i className="lucide-icon icon-plus w-3 h-3 text-white" />
           <span>إضافة وحدة</span>
         </button>
       </div>
