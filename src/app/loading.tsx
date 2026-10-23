@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Logo } from "@/components/shared/logo";
 
 export default function Loading() {
   return (
@@ -7,14 +7,7 @@ export default function Loading() {
         {/* Animated Brand Emblem */}
         <div className="relative flex items-center justify-center">
           <div className="w-16 h-16 rounded-2xl bg-[#344230] border border-[#273323] flex items-center justify-center p-3 shadow-md animate-pulse">
-            <Image
-              src="/logo.png"
-              alt="ابراج"
-              width={40}
-              height={40}
-              className="w-full h-full object-contain"
-              priority
-            />
+            <Logo size={40} priority />
           </div>
           {/* Subtle spinning indicator ring */}
           <div className="absolute -inset-2 rounded-3xl border-2 border-[#344230]/20 border-t-[#344230] animate-spin" />

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { resolveAssetUrl } from "@/lib/constants";
 import {
   Building2,
   Calendar,
@@ -712,7 +713,7 @@ export function EditBookingForm({ bookingId = "BK-10482" }: EditBookingFormProps
           <div className="bg-white rounded-3xl p-3.5 border border-[#E2E6DC] space-y-3 shadow-2xs">
             <div className="relative h-44 rounded-2xl overflow-hidden group">
               <Image
-                src="/properties/suite_204_interior.webp"
+                src={resolveAssetUrl("/properties/suite_204_interior.webp")}
                 alt="جناح تنفيذي فاخر — عمارة النخيل"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"

@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useMemo } from "react";
 import Link from "next/link";
 import {
   Plus,
@@ -24,13 +23,12 @@ import {
   Play,
   Trash2,
 } from "lucide-react";
-import { toast } from "sonner";
-import { AutomationRule, AutomationMainTab } from "../../types";
-import { initialAutomationRules } from "../../data/mock-automation";
+import { AutomationMainTab } from "../../types";
 import { AutomationTabsNav } from "../automation-tabs-nav";
 import { PauseRuleModal } from "./modals/pause-rule-modal";
 import { ActivateRuleModal } from "./modals/activate-rule-modal";
 import { DeleteRuleModal } from "./modals/delete-rule-modal";
+import { useAutomationRulesManager } from "../../controllers/use-automation-rules-manager";
 
 interface AutomationRulesViewProps {
   onSelectRule?: (ruleId: string) => void;
@@ -38,54 +36,31 @@ interface AutomationRulesViewProps {
 }
 
 export function AutomationRulesView({ onSelectRule, onTabChange }: AutomationRulesViewProps) {
-  const [rules, setRules] = useState<AutomationRule[]>(initialAutomationRules);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [statusFilter, setStatusFilter] = useState<"all" | "active" | "paused">("all");
-  const [isEmptyPreview, setIsEmptyPreview] = useState(false);
-
-  // Modals state
-  const [activeRuleForModal, setActiveRuleForModal] = useState<AutomationRule | null>(null);
-  const [isPauseOpen, setIsPauseOpen] = useState(false);
-  const [isActivateOpen, setIsActivateOpen] = useState(false);
-  const [isDeleteOpen, setIsDeleteOpen] = useState(false);
-  const [openDropdownId, setOpenDropdownId] = useState<string | null>(null);
-
-  const filteredRules = useMemo(() => {
-    return rules.filter((rule) => {
-      if (statusFilter === "active" && rule.status !== "active") return false;
-      if (statusFilter === "paused" && rule.status !== "paused") return false;
-
-      if (searchQuery.trim()) {
-        const q = searchQuery.toLowerCase().trim();
-        const matches =
-          rule.title.toLowerCase().includes(q) ||
-          rule.ruleCode.toLowerCase().includes(q) ||
-          rule.triggerLabel.toLowerCase().includes(q) ||
-          rule.description.toLowerCase().includes(q);
-        if (!matches) return false;
-      }
-
-      return true;
-    });
-  }, [rules, statusFilter, searchQuery]);
-
-  const handleExport = () => {
-    toast.success("جاري تصدير قائمة قواعد الأتمتة...");
-  };
-
-  const handleToggleStatus = (rule: AutomationRule) => {
-    setActiveRuleForModal(rule);
-    if (rule.status === "active") {
-      setIsPauseOpen(true);
-    } else {
-      setIsActivateOpen(true);
-    }
-  };
-
-  const handleDeleteRule = (rule: AutomationRule) => {
-    setActiveRuleForModal(rule);
-    setIsDeleteOpen(true);
-  };
+  const {
+    rules,
+    searchQuery,
+    statusFilter,
+    isEmptyPreview,
+    activeRuleForModal,
+    isPauseOpen,
+    isActivateOpen,
+    isDeleteOpen,
+    openDropdownId,
+    filteredRules,
+    setSearchQuery,
+    setStatusFilter,
+    setIsEmptyPreview,
+    setOpenDropdownId,
+    setIsPauseOpen,
+    setIsActivateOpen,
+    setIsDeleteOpen,
+    handleExport,
+    handleToggleStatus,
+    handleDeleteRule,
+    confirmPause,
+    confirmActivate,
+    confirmDelete,
+  } = useAutomationRulesManager();
 
   return (
     <div className="space-y-5">
@@ -423,41 +398,21 @@ export function AutomationRulesView({ onSelectRule, onTabChange }: AutomationRul
         isOpen={isPauseOpen}
         onClose={() => setIsPauseOpen(false)}
         rule={activeRuleForModal}
-        onConfirm={() => {
-          if (activeRuleForModal) {
-            setRules(
-              rules.map((r) =>
-                r.id === activeRuleForModal.id ? { ...r, status: "paused" } : r
-              )
-            );
-          }
-        }}
+        onConfirm={confirmPause}
       />
 
       <ActivateRuleModal
         isOpen={isActivateOpen}
         onClose={() => setIsActivateOpen(false)}
         rule={activeRuleForModal}
-        onConfirm={() => {
-          if (activeRuleForModal) {
-            setRules(
-              rules.map((r) =>
-                r.id === activeRuleForModal.id ? { ...r, status: "active" } : r
-              )
-            );
-          }
-        }}
+        onConfirm={confirmActivate}
       />
 
       <DeleteRuleModal
         isOpen={isDeleteOpen}
         onClose={() => setIsDeleteOpen(false)}
         rule={activeRuleForModal}
-        onConfirm={() => {
-          if (activeRuleForModal) {
-            setRules(rules.filter((r) => r.id !== activeRuleForModal.id));
-          }
-        }}
+        onConfirm={confirmDelete}
       />
     </div>
   );

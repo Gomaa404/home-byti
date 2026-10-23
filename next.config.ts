@@ -16,6 +16,30 @@ const nextConfig: NextConfig = {
         async redirects() {
           return [
             {
+              source: "/logo.png",
+              destination: "/Edaret_Amlak/logo.png",
+              basePath: false,
+              permanent: false,
+            },
+            {
+              source: "/avatar.webp",
+              destination: "/Edaret_Amlak/avatar.webp",
+              basePath: false,
+              permanent: false,
+            },
+            {
+              source: "/properties/:path*",
+              destination: "/Edaret_Amlak/properties/:path*",
+              basePath: false,
+              permanent: false,
+            },
+            {
+              source: "/icon.png",
+              destination: "/Edaret_Amlak/icon.png",
+              basePath: false,
+              permanent: false,
+            },
+            {
               source: "/",
               has: [
                 {

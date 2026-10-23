@@ -6,7 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { motion } from "motion/react";
 import { clearAuthSession, getAuthUser, type AuthUser } from "@/lib/auth-session";
-import Image from "next/image";
+import { Logo } from "@/components/shared/logo";
 import {
   LayoutGrid,
   Users,
@@ -154,14 +154,7 @@ export function Sidebar() {
         {/* Top Header: Brand Squircle Icon */}
         <div className="relative flex flex-col items-center">
           <div className="w-10 h-10 rounded-xl bg-[#252A24] border border-white/15 flex items-center justify-center p-2 shadow-2xs">
-            <Image
-              src="/logo.png"
-              alt="ابراج"
-              width={24}
-              height={24}
-              className="w-full h-full object-contain"
-              priority
-            />
+            <Logo size={24} priority />
           </div>
 
           {/* Divider */}
@@ -320,14 +313,7 @@ export function Sidebar() {
           <div className="flex items-center justify-between pt-2 px-2">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-[#252A24] border border-white/15 flex items-center justify-center shrink-0 p-2 shadow-2xs">
-                <Image
-                  src="/logo.png"
-                  alt="ابراج"
-                  width={24}
-                  height={24}
-                  className="w-full h-full object-contain"
-                  priority
-                />
+                <Logo size={24} priority />
               </div>
               <div className="space-y-0.5">
                 <h1 className="text-base font-bold tracking-tight text-white leading-tight">

@@ -1,10 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useForm, useWatch } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import {
   ArrowLeft,
   Lock,
@@ -15,68 +11,22 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { registerSchema, type RegisterInput } from "../schemas/register.schema";
-import { registerAction } from "../actions/register.action";
-import { isUserAuthenticated, setAuthSession } from "@/lib/auth-session";
+import { useRegisterController } from "../controllers/use-register-controller";
 
 export function RegisterForm() {
-  const router = useRouter();
-  const [showPassword, setShowPassword] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [feedback, setFeedback] = useState<string | null>(null);
-  const [isCheckingAuth, setIsCheckingAuth] = useState(true);
-
-  useEffect(() => {
-    if (isUserAuthenticated()) {
-      router.replace("/dashboard/");
-    } else {
-      setIsCheckingAuth(false);
-    }
-  }, [router]);
-
   const {
-    register,
-    handleSubmit,
-    control,
-    formState: { errors },
-  } = useForm<RegisterInput>({
-    resolver: zodResolver(registerSchema),
-    defaultValues: {
-      fullName: "",
-      email: "",
-      phone: "",
-      password: "",
-      confirmPassword: "",
-      acceptTerms: false,
+    form: {
+      register,
+      formState: { errors },
     },
-  });
-
-  const passwordValue = useWatch({ control, name: "password" });
-  const confirmPasswordValue = useWatch({ control, name: "confirmPassword" });
-  const passwordsMatch =
-    Boolean(passwordValue) &&
-    Boolean(confirmPasswordValue) &&
-    passwordValue === confirmPasswordValue;
-
-  const onSubmit = async (data: RegisterInput) => {
-    setIsSubmitting(true);
-    setFeedback(null);
-    try {
-      const res = await registerAction(data);
-      if (res?.data?.success) {
-        setAuthSession({
-          fullName: data.fullName,
-          email: data.email,
-        });
-        setFeedback(res.data.message || "تم إنشاء الحساب بنجاح");
-        router.push("/dashboard/");
-      }
-    } catch {
-      setFeedback("حدث خطأ أثناء إنشاء الحساب");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    showPassword,
+    isSubmitting,
+    feedback,
+    isCheckingAuth,
+    passwordsMatch,
+    togglePasswordVisibility,
+    onSubmit,
+  } = useRegisterController();
 
   if (isCheckingAuth) {
     return (
@@ -106,7 +56,7 @@ export function RegisterForm() {
       )}
 
       {/* Main Register Form */}
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={onSubmit} className="space-y-4">
         {/* Row 1: Full Name & Password */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Full Name */}
@@ -142,7 +92,7 @@ export function RegisterForm() {
             <div className="relative flex items-center">
               <button
                 type="button"
-                onClick={() => setShowPassword(!showPassword)}
+                onClick={togglePasswordVisibility}
                 className="absolute end-3.5 flex items-center text-[#2C3825] hover:text-[#172115] transition-colors focus:outline-none cursor-pointer"
                 tabIndex={-1}
                 aria-label="تبديل إظهار كلمة المرور"

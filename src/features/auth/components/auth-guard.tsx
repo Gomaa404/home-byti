@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { isUserAuthenticated } from "@/lib/auth-session";
-import Image from "next/image";
+import { Logo } from "@/components/shared/logo";
 
 export function AuthGuard({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -24,14 +24,7 @@ export function AuthGuard({ children }: { children: React.ReactNode }) {
         <div className="flex flex-col items-center gap-6 max-w-sm text-center">
           <div className="relative flex items-center justify-center">
             <div className="w-16 h-16 rounded-2xl bg-[#344230] border border-[#273323] flex items-center justify-center p-3 shadow-md animate-pulse">
-              <Image
-                src="/logo.png"
-                alt="ابراج"
-                width={40}
-                height={40}
-                className="w-full h-full object-contain"
-                priority
-              />
+              <Logo size={40} priority />
             </div>
             <div className="absolute -inset-2 rounded-3xl border-2 border-[#344230]/20 border-t-[#344230] animate-spin" />
           </div>

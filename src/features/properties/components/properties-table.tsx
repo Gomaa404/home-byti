@@ -1,134 +1,43 @@
 "use client";
 
-import { useState, useMemo, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { Eye, SlidersHorizontal, Building2, Trash2, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
-import { Property, PropertyStatus, MainPropertyFilterState, initialPropertyFilterState } from "../types";
+import { PropertyStatus } from "../types";
 import { PropertiesFilters } from "./properties-filters";
 import { PropertiesAdvancedFilterDrawer } from "./properties-advanced-filter-drawer";
 import { ActionDropdown } from "@/components/shared/action-dropdown";
-
-const initialProperties: Property[] = [
-  {
-    id: "1",
-    title: "عمارة النخيل",
-    type: "عقار سكني وتأجير مؤقت",
-    code: "PR-9014",
-    ownerName: "محمد العتيبي",
-    ownerInitials: "مع",
-    ownerEmail: "m.otaibi@domain.sa",
-    city: "الرياض،",
-    district: "حي النخيل",
-    totalUnits: 12,
-    occupiedUnits: 10,
-    availableUnits: 2,
-    activeBookings: 8,
-    dateAdded: "16 سبتمبر 2026",
-    relativeTime: "(اليوم)",
-    status: "active",
-  },
-  {
-    id: "2",
-    title: "عمارة النخيل",
-    type: "عقار سكني وتأجير مؤقت",
-    code: "PR-9014",
-    ownerName: "محمد العتيبي",
-    ownerInitials: "مع",
-    ownerEmail: "m.otaibi@domain.sa",
-    city: "الرياض،",
-    district: "حي النخيل",
-    totalUnits: 12,
-    occupiedUnits: 10,
-    availableUnits: 2,
-    activeBookings: 8,
-    dateAdded: "16 سبتمبر 2026",
-    relativeTime: "(اليوم)",
-    status: "inactive",
-  },
-  {
-    id: "3",
-    title: "عمارة النخيل",
-    type: "عقار سكني وتأجير مؤقت",
-    code: "PR-9014",
-    ownerName: "محمد العتيبي",
-    ownerInitials: "مع",
-    ownerEmail: "m.otaibi@domain.sa",
-    city: "الرياض،",
-    district: "حي النخيل",
-    totalUnits: 12,
-    occupiedUnits: 10,
-    availableUnits: 2,
-    activeBookings: 8,
-    dateAdded: "16 سبتمبر 2026",
-    relativeTime: "(اليوم)",
-    status: "active",
-  },
-  {
-    id: "4",
-    title: "عمارة النخيل",
-    type: "عقار سكني وتأجير مؤقت",
-    code: "PR-9014",
-    ownerName: "محمد العتيبي",
-    ownerInitials: "مع",
-    ownerEmail: "m.otaibi@domain.sa",
-    city: "الرياض،",
-    district: "حي النخيل",
-    totalUnits: 12,
-    occupiedUnits: 10,
-    availableUnits: 2,
-    activeBookings: 8,
-    dateAdded: "16 سبتمبر 2026",
-    relativeTime: "(اليوم)",
-    status: "archived",
-  },
-  {
-    id: "5",
-    title: "أبراج العليا ريزيدنس",
-    type: "عقار تجاري وسكني",
-    code: "PR-9019",
-    ownerName: "خالد الحربي",
-    ownerInitials: "خح",
-    ownerEmail: "k.harbi@investment.com",
-    city: "الرياض،",
-    district: "حي العليا",
-    totalUnits: 24,
-    occupiedUnits: 20,
-    availableUnits: 4,
-    activeBookings: 15,
-    dateAdded: "15 سبتمبر 2026",
-    relativeTime: "(أمس)",
-    status: "active",
-  },
-  {
-    id: "6",
-    title: "مجمع الروضة الفاخر",
-    type: "فلل وتأجير سنوي",
-    code: "PR-9022",
-    ownerName: "سارة القحطاني",
-    ownerInitials: "سق",
-    ownerEmail: "sara.q@holding.sa",
-    city: "جدة،",
-    district: "حي الروضة",
-    totalUnits: 8,
-    occupiedUnits: 6,
-    availableUnits: 2,
-    activeBookings: 5,
-    dateAdded: "14 سبتمبر 2026",
-    relativeTime: "14 سبتمبر",
-    status: "inactive",
-  },
-];
+import { usePropertiesManager } from "../controllers/use-properties-manager";
 
 export function PropertiesTable() {
-  const [pageSize, setPageSize] = useState<number>(10);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [filter, setFilter] = useState("all");
-  const [search, setSearch] = useState("");
+  const {
+    paginatedProperties,
+    counts,
+    totalHeadlineCount,
+    totalFiltered,
+    totalPages,
+    activePage,
+    fromIndex,
+    toIndex,
+    filter,
+    search,
+    pageSize,
+    isFilterDrawerOpen,
+    propertyFilters,
+    activeFiltersCount,
+    setFilter,
+    setSearch,
+    setCurrentPage,
+    setPageSize,
+    setIsFilterDrawerOpen,
+    setPropertyFilters,
+    handleResetFilters,
+    handleDeleteProperty,
+  } = usePropertiesManager();
+
   const [isPageSizeMenuOpen, setIsPageSizeMenuOpen] = useState(false);
-  const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
-  const [propertyFilters, setPropertyFilters] = useState<MainPropertyFilterState>(initialPropertyFilterState);
   const pageSizeMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -140,84 +49,6 @@ export function PropertiesTable() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
-  const activeFiltersCount = useMemo(() => {
-    let count = 0;
-    if (propertyFilters.propertyType !== "all") count++;
-    if (propertyFilters.city !== "all") count++;
-    if (propertyFilters.district !== "all") count++;
-    if (propertyFilters.status !== "all") count++;
-    if (propertyFilters.unitsRange !== "all") count++;
-    if (propertyFilters.occupancyState !== "all") count++;
-    if (propertyFilters.activeBookings !== "all") count++;
-    if (propertyFilters.owner !== "all") count++;
-    if (propertyFilters.sortBy !== "default") count++;
-    return count;
-  }, [propertyFilters]);
-
-  const handleFilterChange = (newFilter: string) => {
-    setFilter(newFilter);
-    setCurrentPage(1);
-  };
-
-  const handleSearchChange = (newSearch: string) => {
-    setSearch(newSearch);
-    setCurrentPage(1);
-  };
-
-  const filteredProperties = useMemo(() => {
-    return initialProperties.filter((property) => {
-      // Status tab filter
-      if (filter === "active" && property.status !== "active") return false;
-      if (filter === "inactive" && property.status !== "inactive") return false;
-      if (filter === "archived" && property.status !== "archived") return false;
-
-      // Advanced filters
-      if (propertyFilters.propertyType !== "all" && property.type !== propertyFilters.propertyType) {
-        return false;
-      }
-      if (propertyFilters.city !== "all" && !property.city.includes(propertyFilters.city)) {
-        return false;
-      }
-      if (propertyFilters.district !== "all" && !property.district.includes(propertyFilters.district)) {
-        return false;
-      }
-      if (propertyFilters.status !== "all" && property.status !== propertyFilters.status) {
-        return false;
-      }
-
-      // Search query
-      if (search.trim()) {
-        const q = search.toLowerCase();
-        return (
-          property.title.toLowerCase().includes(q) ||
-          property.ownerName.toLowerCase().includes(q) ||
-          property.city.toLowerCase().includes(q) ||
-          property.district.toLowerCase().includes(q) ||
-          property.code.toLowerCase().includes(q)
-        );
-      }
-      return true;
-    });
-  }, [filter, search, propertyFilters]);
-
-  const totalHeadlineCount = 184; // From Figma specification
-  const totalFiltered = filteredProperties.length;
-  const totalPages = Math.max(1, Math.ceil(totalFiltered / pageSize));
-  const activePage = Math.min(currentPage, totalPages);
-
-  const startIndex = (activePage - 1) * pageSize;
-  const paginatedProperties = filteredProperties.slice(startIndex, startIndex + pageSize);
-
-  const fromIndex = totalFiltered === 0 ? 0 : startIndex + 1;
-  const toIndex = Math.min(startIndex + pageSize, totalFiltered);
-
-  const counts = {
-    all: initialProperties.length,
-    active: initialProperties.filter((p) => p.status === "active").length,
-    inactive: initialProperties.filter((p) => p.status === "inactive").length,
-    archived: initialProperties.filter((p) => p.status === "archived").length,
-  };
 
   const renderStatusBadge = (status: PropertyStatus) => {
     if (status === "active") {
@@ -249,9 +80,9 @@ export function PropertiesTable() {
       {/* 1. Search & Tabs Filter Bar */}
       <PropertiesFilters
         currentFilter={filter}
-        onFilterChange={handleFilterChange}
+        onFilterChange={setFilter}
         searchQuery={search}
-        onSearchChange={handleSearchChange}
+        onSearchChange={setSearch}
         counts={counts}
         onOpenAdvancedFilter={() => setIsFilterDrawerOpen(true)}
         activeFiltersCount={activeFiltersCount}
@@ -420,7 +251,7 @@ export function PropertiesTable() {
                                 variant: "destructive",
                               },
                               onClick: () =>
-                                toast.error(`تم أرشفة العقار: ${property.title}`),
+                                handleDeleteProperty(property.id, property.title),
                             },
                           ]}
                         />
@@ -533,11 +364,8 @@ export function PropertiesTable() {
           setPropertyFilters(newFilters);
           setCurrentPage(1);
         }}
-        onResetFilters={() => {
-          setPropertyFilters(initialPropertyFilterState);
-          setCurrentPage(1);
-        }}
-        totalResultsCount={filteredProperties.length}
+        onResetFilters={handleResetFilters}
+        totalResultsCount={totalFiltered}
       />
     </div>
   );

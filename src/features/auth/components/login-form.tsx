@@ -1,10 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import {
   ArrowLeft,
   AtSign,
@@ -14,57 +10,21 @@ import {
   Building2,
   SquareCheck,
 } from "lucide-react";
-import { loginSchema, type LoginInput } from "../schemas/login.schema";
-import { loginAction } from "../actions/login.action";
-import { isUserAuthenticated, setAuthSession } from "@/lib/auth-session";
+import { useLoginController } from "../controllers/use-login-controller";
 
 export function LoginForm() {
-  const router = useRouter();
-  const [showPassword, setShowPassword] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [feedback, setFeedback] = useState<string | null>(null);
-  const [isCheckingAuth, setIsCheckingAuth] = useState(true);
-
-  useEffect(() => {
-    if (isUserAuthenticated()) {
-      router.replace("/dashboard/");
-    } else {
-      setIsCheckingAuth(false);
-    }
-  }, [router]);
-
   const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<LoginInput>({
-    resolver: zodResolver(loginSchema),
-    defaultValues: {
-      identifier: "",
-      password: "",
-      rememberMe: false,
+    form: {
+      register,
+      formState: { errors },
     },
-  });
-
-  const identifierValue = watch("identifier");
-
-  const onSubmit = async (data: LoginInput) => {
-    setIsSubmitting(true);
-    setFeedback(null);
-    try {
-      const res = await loginAction(data);
-      if (res?.data?.success) {
-        setAuthSession({ identifier: data.identifier }, data.rememberMe);
-        setFeedback(res.data.message || "تم تسجيل الدخول بنجاح");
-        router.push("/dashboard/");
-      }
-    } catch {
-      setFeedback("حدث خطأ أثناء تسجيل الدخول");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    showPassword,
+    isSubmitting,
+    feedback,
+    isCheckingAuth,
+    togglePasswordVisibility,
+    onSubmit,
+  } = useLoginController();
 
   if (isCheckingAuth) {
     return (
@@ -94,7 +54,7 @@ export function LoginForm() {
       )}
 
       {/* Main Login Form */}
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+      <form onSubmit={onSubmit} className="space-y-5">
         {/* Identifier Field */}
         <div className="space-y-1.5">
           <label
@@ -135,7 +95,7 @@ export function LoginForm() {
             {/* Toggle show/hide password button */}
             <button
               type="button"
-              onClick={() => setShowPassword(!showPassword)}
+              onClick={togglePasswordVisibility}
               className="absolute end-4 flex items-center text-[#75786F] hover:text-[#273323] transition-colors focus:outline-none"
               tabIndex={-1}
               aria-label="تبديل إظهار كلمة المرور"

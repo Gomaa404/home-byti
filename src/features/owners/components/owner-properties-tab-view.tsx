@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { resolveAssetUrl } from "@/lib/constants";
 import {
   OwnerPropertiesFilterDrawer,
   PropertyFilterState,
@@ -381,7 +382,7 @@ export function OwnerPropertiesTabView({
                       <div className="flex items-center gap-3">
                         <div className="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-[#E2E6DC] bg-[#EEF2E6]">
                           <Image
-                            src={property.image}
+                            src={resolveAssetUrl(property.image)}
                             alt={property.name}
                             fill
                             className="object-cover"

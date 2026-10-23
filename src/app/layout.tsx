@@ -15,23 +15,23 @@ const inter = Inter({
   display: "swap",
 });
 
-const basePath = "/Edaret_Amlak";
+import { APP_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "إدارة أملاك - ابراج",
   description: "المنظومة المتكاملة لإدارة الأصول والوحدات الفندقية والسكنية بالمملكة",
   icons: {
     icon: [
-      { url: `${basePath}/favicon.ico`, sizes: "any" },
-      { url: `${basePath}/favicon-32x32.png`, type: "image/png", sizes: "32x32" },
-      { url: `${basePath}/favicon-16x16.png`, type: "image/png", sizes: "16x16" },
-      { url: `${basePath}/icon.png`, type: "image/png", sizes: "512x512" },
-      { url: `${basePath}/logo-app-icon.png`, type: "image/png", sizes: "512x512" },
+      { url: `${APP_CONFIG.basePath}/favicon.ico`, sizes: "any" },
+      { url: `${APP_CONFIG.basePath}/favicon-32x32.png`, type: "image/png", sizes: "32x32" },
+      { url: `${APP_CONFIG.basePath}/favicon-16x16.png`, type: "image/png", sizes: "16x16" },
+      { url: `${APP_CONFIG.basePath}/icon.png`, type: "image/png", sizes: "512x512" },
+      { url: `${APP_CONFIG.basePath}/logo.png`, type: "image/png", sizes: "512x512" },
     ],
     apple: [
-      { url: `${basePath}/apple-icon.png`, sizes: "180x180", type: "image/png" },
+      { url: `${APP_CONFIG.basePath}/apple-icon.png`, sizes: "180x180", type: "image/png" },
     ],
-    shortcut: `${basePath}/favicon.ico`,
+    shortcut: `${APP_CONFIG.basePath}/favicon.ico`,
   },
 };
 

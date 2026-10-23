@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Logo } from "@/components/shared/logo";
 import {
   CalendarCheck,
   DoorClosed,
@@ -38,14 +38,7 @@ export function AuthShowcase() {
         {/* Brand Header */}
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-2xl bg-[#2D3B28] border border-white/15 flex items-center justify-center p-2.5 shadow-inner">
-            <Image
-              src="/logo.png"
-              alt="ابراج"
-              width={32}
-              height={32}
-              className="w-full h-full object-contain"
-              priority
-            />
+            <Logo size={32} priority />
           </div>
           <div>
             <h2 className="text-2xl font-bold tracking-tight text-white">ابراج</h2>

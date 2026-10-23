@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { useSetBreadcrumbTitle } from "@/hooks/use-navigation-trail";
+import { resolveAssetUrl } from "@/lib/constants";
 import { PropertyDetail } from "../types";
 
 interface PropertyHeroCardProps {
@@ -25,7 +26,7 @@ export function PropertyHeroCard({ property }: PropertyHeroCardProps) {
         <div className="lg:col-span-6 order-1">
           <div className="relative rounded-3xl overflow-hidden h-[300px] sm:h-[340px] border border-[#E2E6DC] shadow-2xs group bg-[#EEF2E6]">
             <Image
-              src={property.heroImage}
+              src={resolveAssetUrl(property.heroImage)}
               alt={property.name}
               fill
               priority

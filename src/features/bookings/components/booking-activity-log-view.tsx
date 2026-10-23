@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { resolveAssetUrl } from "@/lib/constants";
 import {
   ArrowLeft,
   FileDown,
@@ -595,7 +596,7 @@ export function BookingActivityLogView({
               {/* Thumbnail on Left in RTL */}
               <div className="size-[64px] rounded-[12px] overflow-hidden relative border border-[#E2E6DC] shrink-0 bg-[#F1F5EB]">
                 <Image
-                  src={summary.propertyDetails.image}
+                  src={resolveAssetUrl(summary.propertyDetails.image)}
                   alt={summary.propertyDetails.name}
                   fill
                   className="object-cover"

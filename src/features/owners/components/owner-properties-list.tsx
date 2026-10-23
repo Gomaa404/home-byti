@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ArrowLeft } from "lucide-react";
+import { resolveAssetUrl } from "@/lib/constants";
 
 export interface PropertyItem {
   id: string;
@@ -88,7 +89,7 @@ export function OwnerPropertiesList({
             <div className="flex items-center gap-3.5 min-w-0">
               <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden bg-[#EEF2E6] shrink-0 border border-[#E2E6DC]">
                 <Image
-                  src={item.image}
+                  src={resolveAssetUrl(item.image)}
                   alt={item.name}
                   fill
                   className="object-cover"

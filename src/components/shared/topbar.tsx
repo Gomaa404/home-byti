@@ -5,6 +5,7 @@ import { Search, Bell, ChevronLeft } from "lucide-react";
 import { useUIStore } from "@/stores/use-ui-store";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { cn } from "@/lib/utils";
+import { resolveAssetUrl } from "@/lib/constants";
 
 export function Topbar() {
   const { sidebarOpen, toggleSidebar } = useUIStore();
@@ -59,7 +60,7 @@ export function Topbar() {
           {/* 1. Circular Avatar Photo */}
           <div className="relative w-9 h-9 rounded-full overflow-hidden ring-1 ring-[#DCE2D7] shrink-0 shadow-2xs">
             <Image
-              src="/avatar.webp"
+              src={resolveAssetUrl("/avatar.webp")}
               alt="محمد أحمد"
               fill
               className="object-cover object-top"

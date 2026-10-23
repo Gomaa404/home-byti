@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { resolveAssetUrl } from "@/lib/constants";
 import {
   Copy,
   Receipt,
@@ -671,7 +672,7 @@ export function AddBookingForm({ onSuccess }: AddBookingFormProps) {
             {/* Top Half: Image Preview flush to card edges */}
             <div className="relative h-60 sm:h-64 w-full bg-[#EEF2E6]">
               <Image
-                src="/properties/suite_204_interior.webp"
+                src={resolveAssetUrl("/properties/suite_204_interior.webp")}
                 alt="جناح تنفيذي 204"
                 fill
                 className="object-cover"

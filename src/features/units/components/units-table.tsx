@@ -1,16 +1,15 @@
 "use client";
 
-import { useState, useMemo } from "react";
 import Link from "next/link";
 import { BrushCleaning, Star } from "lucide-react";
 import { toast } from "sonner";
-import { Unit, UnitFilterState, UnitStatus } from "../types";
-import { initialUnits } from "../data/mock-units";
+import { Unit, UnitStatus } from "../types";
 import { UnitsFilters } from "./units-filters";
 import { UnitsAdvancedFilterDrawer } from "./units-advanced-filter-drawer";
 import { UnitActionDropdown } from "./unit-action-dropdown";
 import { UnitsEmptyState } from "./units-empty-state";
 import { TablePagination } from "@/components/shared/table-pagination";
+import { useUnitsManager } from "../controllers/use-units-manager";
 
 // Door icon matching the reference row artwork
 function UnitDoorIcon({ className }: { className?: string }) {
@@ -90,139 +89,29 @@ function BookingLinkIcon({ className }: { className?: string }) {
 }
 
 export function UnitsTable() {
-  const [pageSize, setPageSize] = useState<number>(8);
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const [tabFilter, setTabFilter] = useState<string>("all");
-  const [searchQuery, setSearchQuery] = useState<string>("");
-  const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState<boolean>(false);
-  const [advancedFilters, setAdvancedFilters] = useState<UnitFilterState>({
-    property: "all",
-    status: "all",
-    unitType: "all",
-    floor: "all",
-    priceRange: "all",
-    sortBy: "default",
-  });
-
-  const handleTabChange = (newTab: string) => {
-    setTabFilter(newTab);
-    setCurrentPage(1);
-  };
-
-  const handleSearchChange = (query: string) => {
-    setSearchQuery(query);
-    setCurrentPage(1);
-  };
-
-  const handlePageSizeChange = (size: number) => {
-    setPageSize(size);
-    setCurrentPage(1);
-  };
-
-  const activeFiltersCount = useMemo(() => {
-    let count = 0;
-    if (advancedFilters.property !== "all") count++;
-    if (advancedFilters.status !== "all") count++;
-    if (advancedFilters.unitType !== "all") count++;
-    if (advancedFilters.floor !== "all") count++;
-    if (advancedFilters.priceRange !== "all") count++;
-    if (advancedFilters.sortBy !== "default") count++;
-    return count;
-  }, [advancedFilters]);
-
-  // Filter & Search Logic
-  const filteredUnits = useMemo(() => {
-    const list = initialUnits.filter((unit) => {
-      // 1. Status Tab filter
-      if (tabFilter !== "all" && unit.status !== tabFilter) {
-        return false;
-      }
-
-      // 2. Advanced Drawer Filters
-      if (
-        advancedFilters.property !== "all" &&
-        unit.propertyName !== advancedFilters.property
-      ) {
-        return false;
-      }
-      if (
-        advancedFilters.status !== "all" &&
-        unit.status !== advancedFilters.status
-      ) {
-        return false;
-      }
-      if (
-        advancedFilters.unitType !== "all" &&
-        unit.type !== advancedFilters.unitType
-      ) {
-        return false;
-      }
-      if (
-        advancedFilters.floor !== "all" &&
-        unit.floorNumber.toString() !== advancedFilters.floor
-      ) {
-        return false;
-      }
-      if (advancedFilters.priceRange === "less200" && unit.pricePerNight >= 200) {
-        return false;
-      }
-      if (
-        advancedFilters.priceRange === "200-350" &&
-        (unit.pricePerNight < 200 || unit.pricePerNight > 350)
-      ) {
-        return false;
-      }
-      if (advancedFilters.priceRange === "more350" && unit.pricePerNight <= 350) {
-        return false;
-      }
-
-      // 3. Search query (unitNumber, propertyName, ownerName)
-      if (searchQuery.trim()) {
-        const q = searchQuery.toLowerCase().trim();
-        const matchesUnit = unit.unitNumber.toLowerCase().includes(q);
-        const matchesProperty = unit.propertyName.toLowerCase().includes(q);
-        const matchesOwner = unit.ownerName.toLowerCase().includes(q);
-        return matchesUnit || matchesProperty || matchesOwner;
-      }
-
-      return true;
-    });
-
-    // Sorting
-    if (advancedFilters.sortBy === "price_asc") {
-      list.sort((a, b) => a.pricePerNight - b.pricePerNight);
-    } else if (advancedFilters.sortBy === "price_desc") {
-      list.sort((a, b) => b.pricePerNight - a.pricePerNight);
-    } else if (advancedFilters.sortBy === "unit_asc") {
-      list.sort((a, b) => a.unitNumber.localeCompare(b.unitNumber));
-    }
-
-    return list;
-  }, [tabFilter, searchQuery, advancedFilters]);
-
-  // Total counts for tabs
-  const counts = useMemo(
-    () => ({
-      all: initialUnits.length,
-      available: initialUnits.filter((u) => u.status === "available").length,
-      occupied: initialUnits.filter((u) => u.status === "occupied").length,
-      cleaning: initialUnits.filter((u) => u.status === "cleaning").length,
-      maintenance: initialUnits.filter((u) => u.status === "maintenance").length,
-    }),
-    []
-  );
-
-  // Pagination calculation
-  const totalHeadlineCount = 342;
-  const totalFiltered = filteredUnits.length;
-  const totalPages = Math.max(1, Math.ceil(totalFiltered / pageSize));
-  const activePage = Math.min(currentPage, totalPages);
-
-  const startIndex = (activePage - 1) * pageSize;
-  const paginatedUnits = filteredUnits.slice(startIndex, startIndex + pageSize);
-
-  const fromIndex = totalFiltered === 0 ? 0 : startIndex + 1;
-  const toIndex = Math.min(startIndex + pageSize, totalFiltered);
+  const {
+    paginatedUnits,
+    counts,
+    totalHeadlineCount,
+    totalFiltered,
+    totalPages,
+    activePage,
+    fromIndex,
+    toIndex,
+    tabFilter,
+    searchQuery,
+    pageSize,
+    isFilterDrawerOpen,
+    advancedFilters,
+    activeFiltersCount,
+    setTabFilter,
+    setSearchQuery,
+    setPageSize,
+    setCurrentPage,
+    setIsFilterDrawerOpen,
+    setAdvancedFilters,
+    handleResetFilters,
+  } = useUnitsManager();
 
   // Status badge matching the reference
   const renderStatusBadge = (status: UnitStatus) => {
@@ -293,9 +182,9 @@ export function UnitsTable() {
       {/* 1. Search & Filter Bar */}
       <UnitsFilters
         currentFilter={tabFilter}
-        onFilterChange={handleTabChange}
+        onFilterChange={setTabFilter}
         searchQuery={searchQuery}
-        onSearchChange={handleSearchChange}
+        onSearchChange={setSearchQuery}
         counts={counts}
         onOpenAdvancedFilter={() => setIsFilterDrawerOpen(true)}
         activeFiltersCount={activeFiltersCount}
@@ -460,7 +349,7 @@ export function UnitsTable() {
           pageSize={pageSize}
           pageSizeOptions={[8, 10, 20, 50]}
           onPageChange={(page) => setCurrentPage(page)}
-          onPageSizeChange={(size) => handlePageSizeChange(size)}
+          onPageSizeChange={(size) => setPageSize(size)}
           entityName="وحدة"
           pluralEntityName="وحدات"
           registeredLabel="مسجلة"
@@ -476,18 +365,8 @@ export function UnitsTable() {
           setAdvancedFilters(newFilters);
           setCurrentPage(1);
         }}
-        onResetFilters={() => {
-          setAdvancedFilters({
-            property: "all",
-            status: "all",
-            unitType: "all",
-            floor: "all",
-            priceRange: "all",
-            sortBy: "default",
-          });
-          setCurrentPage(1);
-        }}
-        totalResultsCount={filteredUnits.length}
+        onResetFilters={handleResetFilters}
+        totalResultsCount={totalFiltered}
       />
     </div>
   );

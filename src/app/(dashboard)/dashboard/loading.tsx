@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Logo } from "@/components/shared/logo";
 
 export default function DashboardLoading() {
   return (
@@ -41,14 +41,7 @@ export default function DashboardLoading() {
         <div className="flex flex-col items-center justify-center py-8 text-center space-y-3">
           <div className="relative flex items-center justify-center">
             <div className="w-14 h-14 rounded-2xl bg-[#303A2C] text-white flex items-center justify-center p-3 shadow-md">
-              <Image
-                src="/logo.png"
-                alt="ابراج"
-                width={28}
-                height={28}
-                className="w-full h-full object-contain"
-                priority
-              />
+              <Logo size={28} priority />
             </div>
             {/* Spinning indicator ring */}
             <div className="absolute -inset-2 rounded-3xl border-2 border-[#303A2C]/20 border-t-[#4B5940] animate-spin" />
