@@ -77,8 +77,11 @@ export function Sidebar() {
   const { sidebarOpen, setSidebarOpen } = useUIStore();
   const [currentUser, setCurrentUser] = useState<AuthUser | null>(null);
 
-  // Normalize pathname to strip any trailing slash
-  const cleanPathname = (pathname || "").replace(/\/+$/, "") || "/";
+  // Normalize pathname to strip basePath and any trailing slash
+  const cleanPathname =
+    (pathname || "")
+      .replace(/^\/(?:Edaret_Amlak|dashboard)/i, "")
+      .replace(/\/+$/, "") || "/";
 
   const isItemActive = (href: string) => {
     const cleanHref = href.replace(/\/+$/, "") || "/";

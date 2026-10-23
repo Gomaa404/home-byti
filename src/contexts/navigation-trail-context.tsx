@@ -54,7 +54,7 @@ export function NavigationTrailProvider({
 
     const baseTrail = generateFallbackTrail(pathname || "/");
     const cleanCurrent = (pathname || "/")
-      .replace(/^\/Edaret_Amlak/, "")
+      .replace(/^\/(?:Edaret_Amlak|dashboard)/i, "")
       .replace(/\/+$/, "") || "/";
 
     const override = titleOverrides[cleanCurrent];
@@ -75,7 +75,7 @@ export function NavigationTrailProvider({
   const updateCurrentTitle = useCallback(
     (title: string, badge?: string) => {
       const cleanCurrent = (pathname || "/")
-        .replace(/^\/Edaret_Amlak/, "")
+        .replace(/^\/(?:Edaret_Amlak|dashboard)/i, "")
         .replace(/\/+$/, "") || "/";
       setTitleOverrides((prev) => ({
         ...prev,

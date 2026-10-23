@@ -99,6 +99,7 @@ export function clearAuthSession(): void {
 
   // Expire cookie across root and basePath
   document.cookie = `${AUTH_COOKIE_NAME}=; path=/; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=Lax`;
+  document.cookie = `${AUTH_COOKIE_NAME}=; path=/Edaret_Amlak; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=Lax`;
   document.cookie = `${AUTH_COOKIE_NAME}=; path=/dashboard; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=Lax`;
 
   try {

@@ -54,8 +54,8 @@ export const STATIC_SEGMENT_TITLES: Record<string, RouteMeta> = {
  * Resolves the display title for a single route pathname
  */
 export function resolveRouteTitle(pathname: string): { title: string; badge?: string } {
-  const clean = (pathname || "").replace(/^\/Edaret_Amlak/, "").replace(/\/+$/, "") || "/";
-  if (clean === "/" || clean === "/dashboard") {
+  const clean = (pathname || "").replace(/^\/(?:Edaret_Amlak|dashboard)/i, "").replace(/\/+$/, "") || "/";
+  if (clean === "/" || clean === "/dashboard" || clean.toLowerCase() === "/edaret_amlak") {
     return { title: "الرئيسية" };
   }
 
@@ -157,8 +157,8 @@ export interface FallbackTrailItem {
  * Builds a hierarchical fallback trail for a direct URL visit
  */
 export function generateFallbackTrail(pathname: string): FallbackTrailItem[] {
-  const clean = (pathname || "").replace(/^\/Edaret_Amlak/, "").replace(/\/+$/, "") || "/";
-  if (clean === "/" || clean === "/dashboard") {
+  const clean = (pathname || "").replace(/^\/(?:Edaret_Amlak|dashboard)/i, "").replace(/\/+$/, "") || "/";
+  if (clean === "/" || clean === "/dashboard" || clean.toLowerCase() === "/edaret_amlak") {
     return [{ title: "الرئيسية", href: "/" }];
   }
 

@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const isDev = process.env.NODE_ENV === "development";
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "/dashboard";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "/Edaret_Amlak";
 
 const nextConfig: NextConfig = {
   output: isDev ? undefined : "export",

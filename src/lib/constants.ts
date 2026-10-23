@@ -4,12 +4,12 @@
 export const APP_CONFIG = {
   name: "ابراج",
   subtitle: "منظومة إدارة وتشغيل العقارات",
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || "/dashboard",
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || "/Edaret_Amlak",
 } as const;
 
 /**
  * Resolves a public asset path by prefixing the application basePath if required.
- * Handles subfolder deployments (e.g. cPanel /dashboard).
+ * Handles subfolder deployments (e.g. cPanel /Edaret_Amlak).
  */
 export function resolveAssetUrl(path: string): string {
   if (!path) return "";
